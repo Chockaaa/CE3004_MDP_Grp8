@@ -503,3 +503,435 @@
 2021-08-22 23:14:17,561 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 1683mS.
 2021-08-22 23:14:17,562 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
 2021-08-22 23:14:17,565 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-22 23:17:00,939 [INFO] RtosManager:791 - Current active RTOS is FREERTOS [Cortex-M3NS]
+2021-08-22 23:17:01,209 [WARN] FreeRTOS:539 - Case being investigated as it may cause exception (when called to early by set config state
+2021-08-22 23:17:01,418 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-08-22 23:17:01,505 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-08-22 23:17:03,200 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-22 23:17:03,201 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-22 23:17:03,201 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-22 23:17:04,388 [INFO] EditThreadDialog:698 - RAM SIZE (in KB): 64
+2021-08-22 23:17:04,388 [INFO] EditThreadDialog:700 - RAM SIZE (in words): 16384
+2021-08-22 23:17:17,259 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-22 23:17:17,259 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-22 23:17:17,259 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-22 23:17:17,259 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-22 23:17:17,259 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-22 23:17:17,259 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-22 23:17:17,356 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-08-22 23:17:20,610 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-22 23:17:20,610 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-22 23:17:20,610 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-22 23:17:20,610 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-22 23:17:20,610 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-22 23:17:20,610 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-22 23:17:24,169 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 405266000 Bytes (922746880)
+2021-08-22 23:17:25,159 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 429909584 Bytes (922746880)
+2021-08-22 23:17:26,269 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 477617744 Bytes (922746880)
+2021-08-22 23:17:29,384 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2021-08-22 23:17:29,384 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: FREERTOS
+2021-08-22 23:17:29,384 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2021-08-22 23:17:29,384 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2021-08-22 23:17:29,384 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2021-08-22 23:17:29,385 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2021-08-22 23:17:29,710 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp_save
+2021-08-22 23:17:29,767 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp
+2021-08-22 23:17:29,783 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp_save
+2021-08-22 23:17:29,830 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp
+2021-08-22 23:17:29,871 [INFO] Middleware:1388 - No code input for Bsp Dependency
+2021-08-22 23:17:29,877 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp_save
+2021-08-22 23:17:29,928 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp
+2021-08-22 23:17:29,933 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp_save
+2021-08-22 23:17:29,981 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp
+2021-08-22 23:17:29,984 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-08-22 23:17:30,030 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp
+2021-08-22 23:17:30,036 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp_save
+2021-08-22 23:17:30,091 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp
+2021-08-22 23:17:30,094 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp_save
+2021-08-22 23:17:30,144 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp
+2021-08-22 23:17:30,147 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp_save
+2021-08-22 23:17:30,194 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp
+2021-08-22 23:17:30,197 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-08-22 23:17:30,246 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp
+2021-08-22 23:17:30,249 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp_save
+2021-08-22 23:17:30,295 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp
+2021-08-22 23:17:30,299 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp_save
+2021-08-22 23:17:30,347 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp
+2021-08-22 23:17:30,350 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h_save
+2021-08-22 23:17:30,417 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h
+2021-08-22 23:17:30,422 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c_save
+2021-08-22 23:17:30,482 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c
+2021-08-22 23:17:30,491 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c_save
+2021-08-22 23:17:30,563 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c
+2021-08-22 23:17:30,568 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h_save
+2021-08-22 23:17:30,619 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h
+2021-08-22 23:17:30,629 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c_save
+2021-08-22 23:17:30,704 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c
+2021-08-22 23:17:30,708 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp_save
+2021-08-22 23:17:30,755 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp
+2021-08-22 23:17:30,763 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h_save
+2021-08-22 23:17:30,847 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h
+2021-08-22 23:17:30,873 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h_save
+2021-08-22 23:17:30,932 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h
+2021-08-22 23:17:30,937 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c_save
+2021-08-22 23:17:31,053 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c
+2021-08-22 23:17:31,725 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 114mS.
+2021-08-22 23:17:31,730 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2021-08-22 23:17:32,039 [INFO] ConfigFileManager:1271 - The Die is : DIE414
+2021-08-22 23:17:33,375 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 1645mS.
+2021-08-22 23:17:33,375 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-22 23:17:33,382 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-22 23:27:09,234 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-22 23:27:09,234 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-22 23:27:09,234 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-22 23:27:09,234 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-22 23:27:09,234 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-22 23:27:09,235 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-22 23:42:05,306 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-08-22 23:42:25,835 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-08-22 23:42:46,995 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-08-22 23:42:53,444 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-08-22 23:43:02,564 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-22 23:44:03,574 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 588278448 Bytes (922746880)
+2021-08-22 23:44:05,290 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 613966096 Bytes (922746880)
+2021-08-22 23:44:07,271 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 714109928 Bytes (922746880)
+2021-08-22 23:44:09,379 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2021-08-22 23:44:09,379 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: FREERTOS
+2021-08-22 23:44:09,379 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2021-08-22 23:44:09,380 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2021-08-22 23:44:09,380 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2021-08-22 23:44:09,380 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2021-08-22 23:44:09,637 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp_save
+2021-08-22 23:44:09,685 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp
+2021-08-22 23:44:09,707 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp_save
+2021-08-22 23:44:09,754 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp
+2021-08-22 23:44:09,802 [INFO] Middleware:1388 - No code input for Bsp Dependency
+2021-08-22 23:44:09,808 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp_save
+2021-08-22 23:44:09,854 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp
+2021-08-22 23:44:09,857 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp_save
+2021-08-22 23:44:09,901 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp
+2021-08-22 23:44:09,904 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-08-22 23:44:09,950 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp
+2021-08-22 23:44:09,953 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp_save
+2021-08-22 23:44:10,001 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp
+2021-08-22 23:44:10,004 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp_save
+2021-08-22 23:44:10,049 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp
+2021-08-22 23:44:10,052 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp_save
+2021-08-22 23:44:10,096 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp
+2021-08-22 23:44:10,099 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-08-22 23:44:10,149 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp
+2021-08-22 23:44:10,152 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp_save
+2021-08-22 23:44:10,202 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp
+2021-08-22 23:44:10,205 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp_save
+2021-08-22 23:44:10,255 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp
+2021-08-22 23:44:10,260 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h_save
+2021-08-22 23:44:10,337 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h
+2021-08-22 23:44:10,342 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c_save
+2021-08-22 23:44:10,403 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c
+2021-08-22 23:44:10,414 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c_save
+2021-08-22 23:44:10,487 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c
+2021-08-22 23:44:10,492 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h_save
+2021-08-22 23:44:10,546 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h
+2021-08-22 23:44:10,557 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c_save
+2021-08-22 23:44:10,639 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c
+2021-08-22 23:44:10,643 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp_save
+2021-08-22 23:44:10,691 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp
+2021-08-22 23:44:10,700 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h_save
+2021-08-22 23:44:10,816 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h
+2021-08-22 23:44:10,842 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h_save
+2021-08-22 23:44:10,900 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h
+2021-08-22 23:44:10,906 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c_save
+2021-08-22 23:44:11,012 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c
+2021-08-22 23:44:11,693 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 113mS.
+2021-08-22 23:44:11,698 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2021-08-22 23:44:12,014 [INFO] ConfigFileManager:1271 - The Die is : DIE414
+2021-08-22 23:44:13,500 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 1802mS.
+2021-08-22 23:44:13,501 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-22 23:44:13,508 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-23 00:01:21,476 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 539926632 Bytes (975175680)
+2021-08-23 00:01:22,971 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 565618792 Bytes (975175680)
+2021-08-23 00:01:24,551 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 615950440 Bytes (975175680)
+2021-08-23 00:01:48,101 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2021-08-23 00:01:48,101 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: FREERTOS
+2021-08-23 00:01:48,101 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2021-08-23 00:01:48,101 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2021-08-23 00:01:48,101 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2021-08-23 00:01:48,102 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2021-08-23 00:01:48,353 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp_save
+2021-08-23 00:01:48,401 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp
+2021-08-23 00:01:48,425 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp_save
+2021-08-23 00:01:48,472 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp
+2021-08-23 00:01:48,522 [INFO] Middleware:1388 - No code input for Bsp Dependency
+2021-08-23 00:01:48,528 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp_save
+2021-08-23 00:01:48,571 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp
+2021-08-23 00:01:48,574 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp_save
+2021-08-23 00:01:48,619 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp
+2021-08-23 00:01:48,622 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-08-23 00:01:48,665 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp
+2021-08-23 00:01:48,668 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp_save
+2021-08-23 00:01:48,716 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp
+2021-08-23 00:01:48,719 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp_save
+2021-08-23 00:01:48,772 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp
+2021-08-23 00:01:48,775 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp_save
+2021-08-23 00:01:48,824 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp
+2021-08-23 00:01:48,827 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-08-23 00:01:48,870 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp
+2021-08-23 00:01:48,873 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp_save
+2021-08-23 00:01:48,921 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp
+2021-08-23 00:01:48,924 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp_save
+2021-08-23 00:01:48,970 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp
+2021-08-23 00:01:48,974 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h_save
+2021-08-23 00:01:49,047 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h
+2021-08-23 00:01:49,052 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c_save
+2021-08-23 00:01:49,109 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c
+2021-08-23 00:01:49,120 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c_save
+2021-08-23 00:01:49,237 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c
+2021-08-23 00:01:49,242 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h_save
+2021-08-23 00:01:49,300 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h
+2021-08-23 00:01:49,310 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c_save
+2021-08-23 00:01:49,385 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c
+2021-08-23 00:01:49,389 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp_save
+2021-08-23 00:01:49,440 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp
+2021-08-23 00:01:49,448 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h_save
+2021-08-23 00:01:49,506 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h
+2021-08-23 00:01:49,532 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h_save
+2021-08-23 00:01:49,586 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h
+2021-08-23 00:01:49,591 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c_save
+2021-08-23 00:01:49,688 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c
+2021-08-23 00:01:50,350 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 113mS.
+2021-08-23 00:01:50,356 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2021-08-23 00:01:50,656 [INFO] ConfigFileManager:1271 - The Die is : DIE414
+2021-08-23 00:01:52,011 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 1655mS.
+2021-08-23 00:01:52,012 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 1mS.
+2021-08-23 00:01:52,018 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-23 00:18:05,850 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:18:07,890 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:18:10,872 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:18:59,192 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:19:03,354 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:19:57,366 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:20:14,166 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:20:15,845 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:21:22,204 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:22:23,899 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:22:50,657 [INFO] Gpio:254 - dependency for GPIO []
+2021-08-23 00:23:15,786 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 505209456 Bytes (975175680)
+2021-08-23 00:23:16,743 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 551873136 Bytes (975175680)
+2021-08-23 00:23:18,287 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 632808072 Bytes (975175680)
+2021-08-23 00:23:20,122 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2021-08-23 00:23:20,122 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: FREERTOS
+2021-08-23 00:23:20,122 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-08-23 00:23:20,122 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2021-08-23 00:23:20,123 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2021-08-23 00:23:20,123 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2021-08-23 00:23:20,124 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2021-08-23 00:23:20,421 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp_save
+2021-08-23 00:23:20,472 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp
+2021-08-23 00:23:20,501 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp_save
+2021-08-23 00:23:20,552 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp
+2021-08-23 00:23:20,729 [INFO] Middleware:1388 - No code input for Bsp Dependency
+2021-08-23 00:23:20,736 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp_save
+2021-08-23 00:23:20,781 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp
+2021-08-23 00:23:20,784 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp_save
+2021-08-23 00:23:20,828 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp
+2021-08-23 00:23:20,831 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-08-23 00:23:20,877 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp
+2021-08-23 00:23:20,880 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp_save
+2021-08-23 00:23:20,935 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp
+2021-08-23 00:23:20,938 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp_save
+2021-08-23 00:23:20,990 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp
+2021-08-23 00:23:20,993 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp_save
+2021-08-23 00:23:21,041 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp
+2021-08-23 00:23:21,044 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-08-23 00:23:21,096 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp
+2021-08-23 00:23:21,099 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp_save
+2021-08-23 00:23:21,150 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp
+2021-08-23 00:23:21,153 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp_save
+2021-08-23 00:23:21,199 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp
+2021-08-23 00:23:21,203 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h_save
+2021-08-23 00:23:21,336 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h
+2021-08-23 00:23:21,341 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c_save
+2021-08-23 00:23:21,409 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c
+2021-08-23 00:23:21,422 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c_save
+2021-08-23 00:23:21,494 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c
+2021-08-23 00:23:21,500 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h_save
+2021-08-23 00:23:21,559 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h
+2021-08-23 00:23:21,570 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c_save
+2021-08-23 00:23:21,657 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c
+2021-08-23 00:23:21,661 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp_save
+2021-08-23 00:23:21,712 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp
+2021-08-23 00:23:21,720 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h_save
+2021-08-23 00:23:21,786 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h
+2021-08-23 00:23:21,805 [WARN] IPConfigManager:3148 - IP not found : TIM
+2021-08-23 00:23:21,806 [WARN] CodeGenerator:3268 - IP not found : null
+2021-08-23 00:23:21,813 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h_save
+2021-08-23 00:23:21,878 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h
+2021-08-23 00:23:21,884 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c_save
+2021-08-23 00:23:22,003 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c
+2021-08-23 00:23:22,703 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 115mS.
+2021-08-23 00:23:22,708 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2021-08-23 00:23:23,031 [INFO] ConfigFileManager:1271 - The Die is : DIE414
+2021-08-23 00:23:24,442 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 1734mS.
+2021-08-23 00:23:24,443 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-23 00:23:24,450 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-23 00:26:26,255 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-08-23 00:26:29,413 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 00:26:29,413 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 00:26:29,413 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 00:26:29,414 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 00:26:29,414 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 00:26:29,414 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 00:26:32,371 [INFO] EditThreadDialog:698 - RAM SIZE (in KB): 64
+2021-08-23 00:26:32,371 [INFO] EditThreadDialog:700 - RAM SIZE (in words): 16384
+2021-08-23 00:26:56,186 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 00:26:56,186 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 00:26:56,186 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 00:26:56,187 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 00:26:56,187 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 00:26:56,187 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 00:26:56,187 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 00:26:56,187 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 00:26:56,187 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 00:26:57,631 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 447724208 Bytes (1042284544)
+2021-08-23 00:26:58,889 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 471812992 Bytes (1042284544)
+2021-08-23 00:27:00,865 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 517950336 Bytes (1042284544)
+2021-08-23 00:27:03,048 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2021-08-23 00:27:03,048 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: FREERTOS
+2021-08-23 00:27:03,048 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-08-23 00:27:03,048 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2021-08-23 00:27:03,048 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2021-08-23 00:27:03,049 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2021-08-23 00:27:03,049 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2021-08-23 00:27:03,343 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp_save
+2021-08-23 00:27:03,390 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp
+2021-08-23 00:27:03,418 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp_save
+2021-08-23 00:27:03,466 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp
+2021-08-23 00:27:03,680 [INFO] Middleware:1388 - No code input for Bsp Dependency
+2021-08-23 00:27:03,687 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp_save
+2021-08-23 00:27:03,736 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp
+2021-08-23 00:27:03,739 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp_save
+2021-08-23 00:27:03,786 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp
+2021-08-23 00:27:03,789 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-08-23 00:27:03,840 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp
+2021-08-23 00:27:03,843 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp_save
+2021-08-23 00:27:03,890 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp
+2021-08-23 00:27:03,893 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp_save
+2021-08-23 00:27:03,944 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp
+2021-08-23 00:27:03,947 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp_save
+2021-08-23 00:27:03,993 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp
+2021-08-23 00:27:03,996 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-08-23 00:27:04,051 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp
+2021-08-23 00:27:04,053 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp_save
+2021-08-23 00:27:04,104 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp
+2021-08-23 00:27:04,107 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp_save
+2021-08-23 00:27:04,153 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp
+2021-08-23 00:27:04,157 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h_save
+2021-08-23 00:27:04,230 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h
+2021-08-23 00:27:04,235 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c_save
+2021-08-23 00:27:04,298 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c
+2021-08-23 00:27:04,310 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c_save
+2021-08-23 00:27:04,372 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c
+2021-08-23 00:27:04,377 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h_save
+2021-08-23 00:27:04,432 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h
+2021-08-23 00:27:04,443 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c_save
+2021-08-23 00:27:04,529 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c
+2021-08-23 00:27:04,532 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp_save
+2021-08-23 00:27:04,582 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp
+2021-08-23 00:27:04,591 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h_save
+2021-08-23 00:27:04,657 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h
+2021-08-23 00:27:04,675 [WARN] IPConfigManager:3148 - IP not found : TIM
+2021-08-23 00:27:04,676 [WARN] CodeGenerator:3268 - IP not found : null
+2021-08-23 00:27:04,683 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h_save
+2021-08-23 00:27:04,737 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h
+2021-08-23 00:27:04,743 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c_save
+2021-08-23 00:27:04,858 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c
+2021-08-23 00:27:05,545 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 117mS.
+2021-08-23 00:27:05,550 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2021-08-23 00:27:05,878 [INFO] ConfigFileManager:1271 - The Die is : DIE414
+2021-08-23 00:27:07,318 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 1768mS.
+2021-08-23 00:27:07,319 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 1mS.
+2021-08-23 00:27:07,325 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-23 01:05:42,815 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-08-23 01:05:44,800 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 01:05:44,800 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 01:05:44,800 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 01:05:44,800 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 01:05:44,800 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 01:05:44,801 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 01:05:44,801 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 01:05:44,801 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 01:05:44,801 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 01:05:45,773 [INFO] EditThreadDialog:698 - RAM SIZE (in KB): 64
+2021-08-23 01:05:45,773 [INFO] EditThreadDialog:700 - RAM SIZE (in words): 16384
+2021-08-23 01:06:00,595 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 01:06:00,596 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 01:06:00,596 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 01:06:00,596 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 01:06:00,596 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 01:06:00,596 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 01:06:00,596 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 01:06:00,597 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 01:06:00,597 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 01:06:00,597 [INFO] TasksAndQueuesTab:752 - Dynamic
+2021-08-23 01:06:00,597 [WARN] TasksAndQueuesTab:758 - 128 128
+2021-08-23 01:06:00,597 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
+2021-08-23 01:06:03,913 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 646063328 Bytes (1042284544)
+2021-08-23 01:06:05,020 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 669658336 Bytes (1042284544)
+2021-08-23 01:06:06,382 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 716844256 Bytes (1042284544)
+2021-08-23 01:06:08,925 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2021-08-23 01:06:08,925 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: FREERTOS
+2021-08-23 01:06:08,925 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-08-23 01:06:08,926 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-08-23 01:06:08,926 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2021-08-23 01:06:08,926 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2021-08-23 01:06:08,926 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2021-08-23 01:06:08,927 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2021-08-23 01:06:09,259 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp_save
+2021-08-23 01:06:09,304 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\license.tmp
+2021-08-23 01:06:09,334 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp_save
+2021-08-23 01:06:09,386 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\gpio.tmp
+2021-08-23 01:06:09,570 [INFO] Middleware:1388 - No code input for Bsp Dependency
+2021-08-23 01:06:09,576 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp_save
+2021-08-23 01:06:09,624 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_inc.tmp
+2021-08-23 01:06:09,627 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp_save
+2021-08-23 01:06:09,678 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelInit.tmp
+2021-08-23 01:06:09,681 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-08-23 01:06:09,727 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_kernelStart.tmp
+2021-08-23 01:06:09,730 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp_save
+2021-08-23 01:06:09,785 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_typedefs.tmp
+2021-08-23 01:06:09,788 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp_save
+2021-08-23 01:06:09,837 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_vars.tmp
+2021-08-23 01:06:09,840 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp_save
+2021-08-23 01:06:09,887 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_pfp.tmp
+2021-08-23 01:06:09,890 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-08-23 01:06:09,943 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_obj_creat.tmp
+2021-08-23 01:06:09,946 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp_save
+2021-08-23 01:06:09,994 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_default_thread.tmp
+2021-08-23 01:06:09,997 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp_save
+2021-08-23 01:06:10,045 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\rtos_threads.tmp
+2021-08-23 01:06:10,050 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h_save
+2021-08-23 01:06:10,122 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\FreeRTOSConfig.h
+2021-08-23 01:06:10,127 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c_save
+2021-08-23 01:06:10,188 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\freertos.c
+2021-08-23 01:06:10,200 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c_save
+2021-08-23 01:06:10,332 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_it.c
+2021-08-23 01:06:10,338 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h_save
+2021-08-23 01:06:10,396 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_it.h
+2021-08-23 01:06:10,407 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c_save
+2021-08-23 01:06:10,498 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\stm32f1xx_hal_msp.c
+2021-08-23 01:06:10,502 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp_save
+2021-08-23 01:06:10,554 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\MXTmpFiles\system.tmp
+2021-08-23 01:06:10,562 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h_save
+2021-08-23 01:06:10,629 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\stm32f1xx_hal_conf.h
+2021-08-23 01:06:10,647 [WARN] IPConfigManager:3148 - IP not found : TIM
+2021-08-23 01:06:10,648 [WARN] CodeGenerator:3268 - IP not found : null
+2021-08-23 01:06:10,655 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h_save
+2021-08-23 01:06:10,716 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Inc\main.h
+2021-08-23 01:06:10,721 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c_save
+2021-08-23 01:06:10,854 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_Grp8\Core\Src\main.c
+2021-08-23 01:06:11,502 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 113mS.
+2021-08-23 01:06:11,507 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2021-08-23 01:06:11,992 [INFO] ConfigFileManager:1271 - The Die is : DIE414
+2021-08-23 01:06:13,464 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 1957mS.
+2021-08-23 01:06:13,465 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-08-23 01:06:13,472 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
