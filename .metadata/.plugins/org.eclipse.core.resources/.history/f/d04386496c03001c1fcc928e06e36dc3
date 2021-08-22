@@ -451,8 +451,8 @@ void motors(void *argument)
 	  while(pwmVal<4000)
 	  {
 		  HAL_GPIO_WritePin(GPIOA,AIN2_Pin,GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOA,BIN2_Pin,GPIO_PIN_SET);
 		  HAL_GPIO_WritePin(GPIOA,AIN1_Pin,GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(GPIOA,BIN2_Pin,GPIO_PIN_SET);
 		  HAL_GPIO_WritePin(GPIOA,BIN1_Pin,GPIO_PIN_RESET);
 		  pwmVal++;
 		  __HAL_TIM_SetCompare(&htim8,TIM_CHANNEL_1,pwmVal);
@@ -463,13 +463,13 @@ void motors(void *argument)
 	  while(pwmVal>0)
 	  {
 		  HAL_GPIO_WritePin(GPIOA,AIN2_Pin,GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOA,BIN2_Pin,GPIO_PIN_RESET);
-		  HAL_GPIO_WritePin(GPIOA,AIN1_Pin,GPIO_PIN_SET);
-		  HAL_GPIO_WritePin(GPIOA,BIN1_Pin,GPIO_PIN_SET);
-		  pwmVal--;
-		  __HAL_TIM_SetCompare(&htim8,TIM_CHANNEL_1,pwmVal);
-		  __HAL_TIM_SetCompare(&htim8,TIM_CHANNEL_2,pwmVal);
-		  osDelay(10);
+		  		  HAL_GPIO_WritePin(GPIOA,AIN1_Pin,GPIO_PIN_SET);
+		  		  HAL_GPIO_WritePin(GPIOA,BIN2_Pin,GPIO_PIN_RESET);
+		  		  HAL_GPIO_WritePin(GPIOA,BIN1_Pin,GPIO_PIN_SET);
+		  		  pwmVal--;
+		  		  __HAL_TIM_SetCompare(&htim8,TIM_CHANNEL_1,pwmVal);
+		  		  __HAL_TIM_SetCompare(&htim8,TIM_CHANNEL_2,pwmVal);
+		  		  osDelay(10);
 	  }
     osDelay(1000);
   }
@@ -491,10 +491,9 @@ void encoder(void *argument)
 
 	int cnt1,cnt2,diff;
 	uint32_t tick;
-	uint8_t hello[20];
-	uint16_t dir;
+	unit8_t hello[20];
 
-	cnt1 =__HAL_TIM_GET_COUNTER(&htim2);
+	cnt1 =__HAT_TIM_GET_COUNTER(&htim2);
 	tick=HAL_GetTick();
   for(;;)
   {
@@ -513,15 +512,11 @@ void encoder(void *argument)
 			else
 				diff=(65535- cnt1)+cnt2;
 		}
-		sprintf(hello,"Speed:%5d\0",diff);
-		OLED_ShowString(10,20,hello);
-		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
-		sprintf(hello,"Direction:%5d\0",dir);
-		OLED_ShowString(10,30,hello);
-		cnt1 =__HAL_TIM_GET_COUNTER(&htim2);
+		sprintf(hello,"Speed:%5d");
+		cnt1 =__HAT_TIM_GET_COUNTER(&htim2);
 		tick=HAL_GetTick();
 	}
-    //osDelay(1);
+    osDelay(1);
   }
   /* USER CODE END encoder */
 }
