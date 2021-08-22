@@ -1,0 +1,23 @@
+19:46:27 **** Incremental Build of configuration Release for project MDP_grp8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDP_grp8/PeripheralDrivers/Inc" -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MDP_grp8.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDP_grp8\STM32F103VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MDP_grp8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MDP_grp8.elf
+ 
+arm-none-eabi-size   MDP_grp8.elf 
+arm-none-eabi-objdump -h -S  MDP_grp8.elf  > "MDP_grp8.list"
+arm-none-eabi-objcopy  -O ihex  MDP_grp8.elf  "MDP_grp8.hex"
+arm-none-eabi-objcopy  -O binary  MDP_grp8.elf  "MDP_grp8.bin"
+   text	   data	    bss	    dec	    hex	filename
+  13496	     24	   9072	  22592	   5840	MDP_grp8.elf
+Finished building: default.size.stdout
+ 
+Finished building: MDP_grp8.hex
+Finished building: MDP_grp8.bin
+Finished building: MDP_grp8.list
+ 
+ 
+ 
+
+19:46:28 Build Finished. 0 errors, 0 warnings. (took 635ms)
+
