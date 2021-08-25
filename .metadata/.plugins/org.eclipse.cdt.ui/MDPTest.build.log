@@ -1,0 +1,10 @@
+00:17:34 **** Incremental Build of configuration Release for project MDPTest ****
+make -j12 all 
+arm-none-eabi-size   MDPTest.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20920	    124	   9412	  30456	   76f8	MDPTest.elf
+Finished building: default.size.stdout
+ 
+
+00:17:35 Build Finished. 0 errors, 0 warnings. (took 690ms)
+
