@@ -589,6 +589,7 @@ void StartDefaultTask(void *argument)
 	OLED_ShowString(10,10,hello);
 	sprintf(value,"%s\0",aRxBuffer);
 	OLED_ShowString(10,40,value);
+	huart3->RxState = HAL_UART_STATE_READY;
 	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,12);
 	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 	OLED_Refresh_Gram();

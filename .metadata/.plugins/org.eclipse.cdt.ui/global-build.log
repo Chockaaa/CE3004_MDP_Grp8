@@ -2740,3 +2740,966 @@ Finished building: MDPGrp8.bin
  
 Finished building: MDPGrp8.list
  
+00:23:01 **** Incremental Build of configuration Release for project MDPGrp8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:590:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |  ^~~~~~~
+../Core/Src/main.c:590:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   23 | #include "oled.h"
+  +++ |+#include <stdio.h>
+   24 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:590:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+../Core/Src/main.c:590:10: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:590:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |                   ^~
+../Core/Src/main.c:592:11: error: request for member 'flush' in something not a structure or union
+  592 |  aRxBuffer.flush();
+      |           ^
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:641:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:641:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:641:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:641:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:641:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:644:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:644:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:644:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                                  ^~
+../Core/Src/main.c:678:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |         ^~~~~~~
+../Core/Src/main.c:678:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:678:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:678:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:678:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:681:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:681:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:681:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c: In function 'leftmotor':
+../Core/Src/main.c:744:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |       ^~~~~~~
+../Core/Src/main.c:744:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:744:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:744:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:744:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:747:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:747:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:747:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:780:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:780:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:780:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:780:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:780:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:783:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:783:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:783:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                                  ^~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:25:21 **** Incremental Build of configuration Release for project MDPGrp8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:590:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |  ^~~~~~~
+../Core/Src/main.c:590:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   23 | #include "oled.h"
+  +++ |+#include <stdio.h>
+   24 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:590:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+../Core/Src/main.c:590:10: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:590:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |                   ^~
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:641:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:641:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:641:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:641:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:641:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:644:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:644:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:644:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                                  ^~
+../Core/Src/main.c:678:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |         ^~~~~~~
+../Core/Src/main.c:678:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:678:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:678:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:678:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:681:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:681:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:681:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c: In function 'leftmotor':
+../Core/Src/main.c:744:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |       ^~~~~~~
+../Core/Src/main.c:744:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:744:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:744:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:744:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:747:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:747:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:747:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:780:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:780:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:780:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:780:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:780:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:783:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:783:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:783:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                                  ^~
+arm-none-eabi-gcc -o "MDPGrp8.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\STM32F103VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MDPGrp8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MDPGrp8.elf
+ 
+arm-none-eabi-size   MDPGrp8.elf 
+arm-none-eabi-objdump -h -S  MDPGrp8.elf  > "MDPGrp8.list"
+arm-none-eabi-objcopy  -O ihex  MDPGrp8.elf  "MDPGrp8.hex"
+arm-none-eabi-objcopy  -O binary  MDPGrp8.elf  "MDPGrp8.bin"
+   text	   data	    bss	    dec	    hex	filename
+  21860	    124	   9476	  31460	   7ae4	MDPGrp8.elf
+Finished building: default.size.stdout
+ 
+Finished building: MDPGrp8.hex
+Finished building: MDPGrp8.bin
+ 
+Finished building: MDPGrp8.list
+ 
+ 
+00:27:58 **** Incremental Build of configuration Release for project MDPGrp8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:590:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |  ^~~~~~~
+../Core/Src/main.c:590:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   23 | #include "oled.h"
+  +++ |+#include <stdio.h>
+   24 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:590:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+../Core/Src/main.c:590:10: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:590:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |                   ^~
+../Core/Src/main.c:592:11: error: assignment to expression with array type
+  592 |  aRxBuffer=NULL;
+      |           ^
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:641:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:641:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:641:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:641:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:641:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:644:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:644:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:644:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                                  ^~
+../Core/Src/main.c:678:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |         ^~~~~~~
+../Core/Src/main.c:678:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:678:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:678:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:678:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:681:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:681:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:681:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c: In function 'leftmotor':
+../Core/Src/main.c:744:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |       ^~~~~~~
+../Core/Src/main.c:744:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:744:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:744:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:744:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:747:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:747:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:747:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:780:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:780:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:780:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:780:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:780:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:783:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:783:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:783:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                                  ^~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:28:07 **** Incremental Build of configuration Release for project MDPGrp8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:590:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |  ^~~~~~~
+../Core/Src/main.c:590:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   23 | #include "oled.h"
+  +++ |+#include <stdio.h>
+   24 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:590:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+../Core/Src/main.c:590:10: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:590:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |                   ^~
+../Core/Src/main.c:592:12: error: 'null' undeclared (first use in this function)
+  592 |  aRxBuffer=null;
+      |            ^~~~
+../Core/Src/main.c:592:12: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:641:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:641:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:641:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:641:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:641:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:644:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:644:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:644:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                                  ^~
+../Core/Src/main.c:678:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |         ^~~~~~~
+../Core/Src/main.c:678:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:678:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:678:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:678:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:681:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:681:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:681:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c: In function 'leftmotor':
+../Core/Src/main.c:744:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |       ^~~~~~~
+../Core/Src/main.c:744:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:744:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:744:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:744:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:747:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:747:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:747:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:780:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:780:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:780:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:780:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:780:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:783:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:783:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:783:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                                  ^~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:57:45 **** Incremental Build of configuration Release for project MDPGrp8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:590:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |  ^~~~~~~
+../Core/Src/main.c:590:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   23 | #include "oled.h"
+  +++ |+#include <stdio.h>
+   24 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:590:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+../Core/Src/main.c:590:10: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:590:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |                   ^~
+../Core/Src/main.c:592:2: error: 'huart' undeclared (first use in this function); did you mean 'huart3'?
+  592 |  huart->RxState = HAL_UART_STATE_READY
+      |  ^~~~~
+      |  huart3
+../Core/Src/main.c:592:2: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:592:39: error: expected ';' before 'HAL_UART_Receive_IT'
+  592 |  huart->RxState = HAL_UART_STATE_READY
+      |                                       ^
+      |                                       ;
+  593 |  HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,12);
+      |  ~~~~~~~~~~~~~~~~~~~                   
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:642:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  642 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:642:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  642 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:642:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:642:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  642 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:645:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  645 |            sprintf(hello, "RD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:645:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:645:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  645 |            sprintf(hello, "RD:%2d\0", dir);
+      |                                  ^~
+../Core/Src/main.c:679:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+  679 |         sprintf(hello, "S:%5d\0", diff);
+      |         ^~~~~~~
+../Core/Src/main.c:679:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:679:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  679 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:679:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:679:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+  679 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:682:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  682 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:682:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:682:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+  682 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c: In function 'leftmotor':
+../Core/Src/main.c:745:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  745 |       sprintf(hello, "S:%5d\0", diff);
+      |       ^~~~~~~
+../Core/Src/main.c:745:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:745:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  745 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:745:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:745:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+  745 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:748:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  748 |       sprintf(hello, "LD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:748:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:748:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+  748 |       sprintf(hello, "LD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:781:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  781 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:781:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:781:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  781 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:781:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:781:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  781 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:784:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  784 |            sprintf(hello, "LD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:784:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:784:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  784 |            sprintf(hello, "LD:%2d\0", dir);
+      |                                  ^~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:57:53 **** Incremental Build of configuration Release for project MDPGrp8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:590:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |  ^~~~~~~
+../Core/Src/main.c:590:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   23 | #include "oled.h"
+  +++ |+#include <stdio.h>
+   24 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:590:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+../Core/Src/main.c:590:10: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:590:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |                   ^~
+../Core/Src/main.c:592:2: error: 'huart' undeclared (first use in this function); did you mean 'huart3'?
+  592 |  huart->RxState = HAL_UART_STATE_READY;
+      |  ^~~~~
+      |  huart3
+../Core/Src/main.c:592:2: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:642:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  642 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:642:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  642 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:642:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:642:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  642 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:645:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  645 |            sprintf(hello, "RD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:645:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:645:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  645 |            sprintf(hello, "RD:%2d\0", dir);
+      |                                  ^~
+../Core/Src/main.c:679:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+  679 |         sprintf(hello, "S:%5d\0", diff);
+      |         ^~~~~~~
+../Core/Src/main.c:679:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:679:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  679 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:679:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:679:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+  679 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:682:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  682 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:682:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:682:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+  682 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c: In function 'leftmotor':
+../Core/Src/main.c:745:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  745 |       sprintf(hello, "S:%5d\0", diff);
+      |       ^~~~~~~
+../Core/Src/main.c:745:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:745:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  745 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:745:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:745:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+  745 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:748:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  748 |       sprintf(hello, "LD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:748:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:748:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+  748 |       sprintf(hello, "LD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:781:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  781 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:781:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:781:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  781 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:781:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:781:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  781 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:784:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  784 |            sprintf(hello, "LD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:784:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:784:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  784 |            sprintf(hello, "LD:%2d\0", dir);
+      |                                  ^~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:58:04 **** Incremental Build of configuration Release for project MDPGrp8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:590:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |  ^~~~~~~
+../Core/Src/main.c:590:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   23 | #include "oled.h"
+  +++ |+#include <stdio.h>
+   24 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:590:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+../Core/Src/main.c:590:10: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:590:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |                   ^~
+../Core/Src/main.c:592:8: error: invalid type argument of '->' (have 'UART_HandleTypeDef' {aka 'struct __UART_HandleTypeDef'})
+  592 |  huart3->RxState = HAL_UART_STATE_READY;
+      |        ^~
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:642:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  642 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:642:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:642:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  642 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:642:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:642:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  642 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:645:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  645 |            sprintf(hello, "RD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:645:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:645:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  645 |            sprintf(hello, "RD:%2d\0", dir);
+      |                                  ^~
+../Core/Src/main.c:679:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+  679 |         sprintf(hello, "S:%5d\0", diff);
+      |         ^~~~~~~
+../Core/Src/main.c:679:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:679:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  679 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:679:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:679:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+  679 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:682:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  682 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:682:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:682:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+  682 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c: In function 'leftmotor':
+../Core/Src/main.c:745:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  745 |       sprintf(hello, "S:%5d\0", diff);
+      |       ^~~~~~~
+../Core/Src/main.c:745:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:745:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  745 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:745:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:745:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+  745 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:748:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  748 |       sprintf(hello, "LD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:748:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:748:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+  748 |       sprintf(hello, "LD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:781:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  781 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:781:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:781:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  781 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:781:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:781:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  781 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:784:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  784 |            sprintf(hello, "LD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:784:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:784:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  784 |            sprintf(hello, "LD:%2d\0", dir);
+      |                                  ^~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+00:58:20 **** Incremental Build of configuration Release for project MDPGrp8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:590:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |  ^~~~~~~
+../Core/Src/main.c:590:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   23 | #include "oled.h"
+  +++ |+#include <stdio.h>
+   24 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/main.c:590:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+../Core/Src/main.c:590:10: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:590:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  590 |  sprintf(value,"%s\0",aRxBuffer);
+      |                   ^~
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:641:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:641:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:641:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:641:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:641:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  641 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:644:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:644:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:644:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  644 |            sprintf(hello, "RD:%2d\0", dir);
+      |                                  ^~
+../Core/Src/main.c:678:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |         ^~~~~~~
+../Core/Src/main.c:678:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:678:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:678:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:678:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+  678 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:681:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:681:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:681:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+  681 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c: In function 'leftmotor':
+../Core/Src/main.c:744:7: warning: incompatible implicit declaration of built-in function 'sprintf'
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |       ^~~~~~~
+../Core/Src/main.c:744:7: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:744:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:744:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:744:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+  744 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:747:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+../Core/Src/main.c:747:15: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:747:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+  747 |       sprintf(hello, "LD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:780:12: warning: incompatible implicit declaration of built-in function 'sprintf'
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |            ^~~~~~~
+../Core/Src/main.c:780:12: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:780:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:780:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:780:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+  780 |            sprintf(hello, "S:%5d\0", diff);
+      |                                 ^~
+../Core/Src/main.c:783:20: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                    ^~~~~
+      |                    |
+      |                    uint8_t * {aka unsigned char *}
+../Core/Src/main.c:783:20: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:783:34: warning: embedded '\0' in format [-Wformat-contains-nul]
+  783 |            sprintf(hello, "LD:%2d\0", dir);
+      |                                  ^~
+arm-none-eabi-gcc -o "MDPGrp8.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\STM32F103VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MDPGrp8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MDPGrp8.elf
+ 
+arm-none-eabi-size   MDPGrp8.elf 
+arm-none-eabi-objdump -h -S  MDPGrp8.elf  > "MDPGrp8.list"
+arm-none-eabi-objcopy  -O ihex  MDPGrp8.elf  "MDPGrp8.hex"
+arm-none-eabi-objcopy  -O binary  MDPGrp8.elf  "MDPGrp8.bin"
+   text	   data	    bss	    dec	    hex	filename
+  21860	    124	   9476	  31460	   7ae4	MDPGrp8.elf
+Finished building: default.size.stdout
+ 
+Finished building: MDPGrp8.hex
+Finished building: MDPGrp8.bin
+ 
+ 
+Finished building: MDPGrp8.list
+ 

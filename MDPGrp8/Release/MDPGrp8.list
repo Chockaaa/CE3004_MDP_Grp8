@@ -108,7 +108,7 @@ Disassembly of section .text:
  8000298:	2128      	movs	r1, #40	; 0x28
  800029a:	200a      	movs	r0, #10
  800029c:	f000 fc66 	bl	8000b6c <OLED_ShowString>
- 80002a0:	220a      	movs	r2, #10
+ 80002a0:	220c      	movs	r2, #12
  80002a2:	4629      	mov	r1, r5
  80002a4:	4620      	mov	r0, r4
  80002a6:	f002 fa24 	bl	80026f2 <HAL_UART_Receive_IT>
