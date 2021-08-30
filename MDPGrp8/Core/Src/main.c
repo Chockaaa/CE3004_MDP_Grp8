@@ -99,7 +99,7 @@ void leftmotor(void *argument);
   * @retval int
   */
 
-	uint8_t aRxBuffer[20];
+	uint8_t aRxBuffer[12];
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -132,7 +132,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   OLED_Init();
   /* USER CODE END 2 */
-HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,10);
+//HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,12);
   /* Init scheduler */
   osKernelInitialize();
 
@@ -555,7 +555,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	UNUSED(huart);
 
-	HAL_UART_Transmit(&huart3, (uint8_t *)aRxBuffer,10,0xFFFF);
+	//HAL_UART_Transmit(&huart3, (uint8_t *)aRxBuffer,12,0xFFFF);
 }
 /* USER CODE END 4 */
 
@@ -585,14 +585,14 @@ void StartDefaultTask(void *argument)
 	  htim1.Instance->CCR4=72;//center
 	  osDelay(5000);
 	*/
-	  HAL_UART_Transmit(&huart3,(uint8_t *)&ch,1,0xFFFF);
+	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,12);
 	OLED_ShowString(10,10,hello);
 	sprintf(value,"%s\0",aRxBuffer);
 	OLED_ShowString(10,40,value);
-	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,12);
 	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 	OLED_Refresh_Gram();
     osDelay(1000);
+    HAL_UART_Transmit(&huart3,(uint8_t *)&value,12,0xFFFF);
   }
   /* USER CODE END 5 */
 }
