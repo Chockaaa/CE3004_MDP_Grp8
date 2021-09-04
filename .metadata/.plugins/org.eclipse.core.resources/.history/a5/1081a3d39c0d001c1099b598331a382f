@@ -107,8 +107,8 @@ void sensor(void *argument);
   * @brief  The application entry point.
   * @retval int
   */
-uint8_t aRxBuffer[2];
-uint8_t value[2];
+uint8_t aRxBuffer[2]="";
+uint8_t value[2]="";
 int main(void)
 {
   /* USER CODE BEGIN 1 */
