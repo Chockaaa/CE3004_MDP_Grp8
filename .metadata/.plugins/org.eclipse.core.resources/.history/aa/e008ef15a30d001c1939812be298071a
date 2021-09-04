@@ -603,7 +603,7 @@ void StartDefaultTask(void *argument)
 	OLED_ShowString(10,40,value);
 	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 	OLED_Refresh_Gram();
-	int x;
+
 	x=atoi(value);
 					switch(x) {
 		  	  	  	case 10 :
@@ -630,7 +630,10 @@ void StartDefaultTask(void *argument)
 		     default :
 		    	 	 	 	 htim1.Instance->CCR4=72;
 							  break;
-					}
+
+
+
+
 
     osDelay(1000);
     HAL_UART_Transmit(&huart3,(uint8_t *)&value,2,0xFFFF);

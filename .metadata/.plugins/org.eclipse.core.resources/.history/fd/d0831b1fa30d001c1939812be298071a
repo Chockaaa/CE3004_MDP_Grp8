@@ -630,7 +630,10 @@ void StartDefaultTask(void *argument)
 		     default :
 		    	 	 	 	 htim1.Instance->CCR4=72;
 							  break;
-					}
+
+
+
+
 
     osDelay(1000);
     HAL_UART_Transmit(&huart3,(uint8_t *)&value,2,0xFFFF);

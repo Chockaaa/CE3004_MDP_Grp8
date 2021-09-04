@@ -1,7 +1,7 @@
 port='/dev/ttyS0'
 Baudrate=115200
 import serial
-y="20"
+y="10"
 ser=serial.Serial('COM4', baudrate=Baudrate,timeout=1)
 i=0
 while 1:
