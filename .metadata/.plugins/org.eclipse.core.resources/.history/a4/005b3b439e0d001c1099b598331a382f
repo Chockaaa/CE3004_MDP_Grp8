@@ -786,7 +786,7 @@ void sensor(void *argument)
 	  		  		  		  			  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
 	  		  		  		  			  		sprintf(hello, "LD:%2d\0", dir);
 	  		  		  		  			  		OLED_ShowString(10,20,hello);
-	  		  		  		  			  		cnt3=__HAL_TIM_GET_COUNTER(&htim2);
+	  		  		  		  			  		cnt1=__HAL_TIM_GET_COUNTER(&htim2);
 	  		  		  		  			  		tick=HAL_GetTick();
 
 	  		  					  	  	  }

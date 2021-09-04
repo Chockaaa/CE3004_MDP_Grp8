@@ -623,7 +623,13 @@ void rightmotor(void *argument)
 	uint16_t pwmVal=0;
 
 		HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
-
+		HAL_TIM_Encoder_Start(&htim3,TIM_CHANNEL_ALL);
+			int cnt1,cnt2,diff;
+			uint32_t tick;
+			uint16_t dir;
+			uint8_t hello[20];
+			cnt1=__HAL_TIM_GET_COUNTER(&htim3);
+			tick=HAL_GetTick();
 
 
 	  for(;;)
@@ -631,6 +637,28 @@ void rightmotor(void *argument)
 
 		  while (pwmVal < 3000)
 		  	  {
+			  if(HAL_GetTick()-tick>1000L){
+			  		  		  cnt2=__HAL_TIM_GET_COUNTER(&htim3);
+			  		  		  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)){
+			  		  			  if(cnt2<cnt1)
+			  		  				  diff=cnt1-cnt2;
+			  		  			  else
+			  		  				  diff=(65535-cnt2)+cnt1;
+			  		  		  }
+			  		  		  else{
+			  		  			  if(cnt2>cnt1)
+			  		  				  diff=cnt2-cnt1;
+			  		  			  else
+			  		  				  diff=(65535-cnt1)+cnt2;
+			  		  	  	  	  }
+			  		  		sprintf(hello, "S:%5d\0", diff);
+			  		  		OLED_ShowString(50,30,hello);
+			  		  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3);
+			  		  		sprintf(hello, "RD:%2d\0", dir);
+			  		  		OLED_ShowString(10,30,hello);
+			  		  		cnt1=__HAL_TIM_GET_COUNTER(&htim3);
+			  		  		tick=HAL_GetTick();
+			  	  	  }
 
 		  		  //Motor D
 		  		  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
@@ -646,7 +674,28 @@ void rightmotor(void *argument)
 		  	  while (pwmVal > 0)
 		  	  	  {
 
-
+		  		if(HAL_GetTick()-tick>1000L){
+		  		cnt2=__HAL_TIM_GET_COUNTER(&htim3);
+		  		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)){
+		  				if(cnt2<cnt1)
+		  					diff=cnt1-cnt2;
+		  				else
+		  					diff=(65535-cnt2)+cnt1;
+		  					  		  		  }
+		  				else{
+		  				if(cnt2>cnt1)
+		  					diff=cnt2-cnt1;
+		  				else
+		  					diff=(65535-cnt1)+cnt2;
+		  					  		  	  	  }
+		  				sprintf(hello, "S:%5d\0", diff);
+		  				OLED_ShowString(50,30,hello);
+		  				dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3);
+		  				sprintf(hello, "RD:%2d\0", dir);
+		  				OLED_ShowString(10,30,hello);
+		  				cnt1=__HAL_TIM_GET_COUNTER(&htim3);
+		  				tick=HAL_GetTick();
+		  					  	  	  }
 		  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
 		  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
 		  		  	  //Motor C
@@ -677,7 +726,13 @@ void leftmotor(void *argument)
 
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
 
-
+	HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
+	int cnt1,cnt2,diff;
+	uint32_t tick;
+	uint16_t dir;
+	uint8_t hello[20];
+	cnt1=__HAL_TIM_GET_COUNTER(&htim2);
+	tick=HAL_GetTick();
 
 
 
@@ -685,7 +740,28 @@ void leftmotor(void *argument)
   {
 	  while (pwmVal < 3000)
 	  	  {
-
+		  	  if(HAL_GetTick()-tick>1000L){
+		  		  cnt2=__HAL_TIM_GET_COUNTER(&htim2);
+		  		  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)){
+		  			  if(cnt2<cnt1)
+		  				  diff=cnt1-cnt2;
+		  			  else
+		  				  diff=(65535-cnt2)+cnt1;
+		  		  }
+		  		  else{
+		  			  if(cnt2>cnt1)
+		  				  diff=cnt2-cnt1;
+		  			  else
+		  				  diff=(65535-cnt1)+cnt2;
+		  	  	  	  }
+		  		sprintf(hello, "S:%5d\0", diff);
+		  		OLED_ShowString(50,20,hello);
+		  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
+		  		sprintf(hello, "LD:%2d\0", dir);
+		  		OLED_ShowString(10,20,hello);
+		  		cnt1=__HAL_TIM_GET_COUNTER(&htim2);
+		  		tick=HAL_GetTick();
+	  	  }
 
 	  		  //Motor D
 	  		  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
@@ -700,7 +776,28 @@ void leftmotor(void *argument)
 	  	  }
 	  	  while (pwmVal > 0)
 	  	  	  {
-
+	  		 if(HAL_GetTick()-tick>1000L){
+	  				  		  cnt2=__HAL_TIM_GET_COUNTER(&htim2);
+	  				  		  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)){
+	  				  			  if(cnt2<cnt1)
+	  				  				  diff=cnt1-cnt2;
+	  				  			  else
+	  				  				  diff=(65535-cnt2)+cnt1;
+	  				  		  }
+	  				  		  else{
+	  				  			  if(cnt2>cnt1)
+	  				  				  diff=cnt2-cnt1;
+	  				  			  else
+	  				  				  diff=(65535-cnt1)+cnt2;
+	  				  	  	  	  }
+	  				  		sprintf(hello, "S:%5d\0", diff);
+	  				  		OLED_ShowString(50,20,hello);
+	  				  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
+	  				  		sprintf(hello, "LD:%2d\0", dir);
+	  				  		OLED_ShowString(10,20,hello);
+	  				  		cnt1=__HAL_TIM_GET_COUNTER(&htim2);
+	  				  		tick=HAL_GetTick();
+	  			  	  }
 
 	  		  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
 	  		  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
@@ -730,68 +827,8 @@ void sensor(void *argument)
 {
   /* USER CODE BEGIN sensor */
   /* Infinite loop */
-
-		HAL_TIM_Encoder_Start(&htim3,TIM_CHANNEL_ALL);
-		int cnt1,cnt2,diff;
-		uint32_t tick;
-		uint16_t dir;
-		uint8_t hello[20];
-		cnt1=__HAL_TIM_GET_COUNTER(&htim3);
-
-
-		HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
-		int cnt3,cnt4;
-		uint16_t dir3;
-		cnt3=__HAL_TIM_GET_COUNTER(&htim2);
-		tick=HAL_GetTick();
   for(;;)
   {
-	  	  if(HAL_GetTick()-tick>1000L){
-	  		  		cnt2=__HAL_TIM_GET_COUNTER(&htim3);
-	  		  		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)){
-	  		  				if(cnt2<cnt1)
-	  		  					diff=cnt1-cnt2;
-	  		  				else
-	  		  					diff=(65535-cnt2)+cnt1;
-	  		  					  		  		  }
-	  		  				else{
-	  		  				if(cnt2>cnt1)
-	  		  					diff=cnt2-cnt1;
-	  		  				else
-	  		  					diff=(65535-cnt1)+cnt2;
-	  		  					  		  	  	  }
-	  		  				sprintf(hello, "S:%5d\0", diff);
-	  		  				OLED_ShowString(50,30,hello);
-	  		  				dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3);
-	  		  				sprintf(hello, "RD:%2d\0", dir);
-	  		  				OLED_ShowString(10,30,hello);
-	  		  				cnt1=__HAL_TIM_GET_COUNTER(&htim3);
-	  		  				tick=HAL_GetTick();
-
-	  		  		  	cnt4=__HAL_TIM_GET_COUNTER(&htim2);
-	  		  		  	if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)){
-	  		  		  		  	if(cnt4<cnt3)
-	  		  		  		  		diff=cnt3-cnt4;
-	  		  		  		  	else
-	  		  		  		  		diff=(65535-cnt4)+cnt3;
-	  		  		  		  		}
-	  		  		  		  	else{
-	  		  		  		  		if(cnt4>cnt3)
-	  		  		  		  			diff=cnt4-cnt3;
-	  		  		  		  		else
-	  		  		  		  			diff=(65535-cnt3)+cnt4;
-	  		  		  		  		}
-	  		  		  		  			  		sprintf(hello, "S:%5d\0", diff);
-	  		  		  		  			  		OLED_ShowString(50,20,hello);
-	  		  		  		  			  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
-	  		  		  		  			  		sprintf(hello, "LD:%2d\0", dir);
-	  		  		  		  			  		OLED_ShowString(10,20,hello);
-	  		  		  		  			  		cnt3=__HAL_TIM_GET_COUNTER(&htim2);
-	  		  		  		  			  		tick=HAL_GetTick();
-
-	  		  					  	  	  }
-
-
     osDelay(1);
   }
   /* USER CODE END sensor */
