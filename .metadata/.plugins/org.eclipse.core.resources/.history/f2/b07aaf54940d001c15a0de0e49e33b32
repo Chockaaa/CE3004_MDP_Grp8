@@ -622,7 +622,6 @@ void rightmotor(void *argument)
 
 	  for(;;)
 	  {
-
 		  while (pwmVal < 3000)
 		  	  {
 			  if(HAL_GetTick()-tick>1000L){
