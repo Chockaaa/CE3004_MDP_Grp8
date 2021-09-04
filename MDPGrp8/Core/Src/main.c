@@ -620,44 +620,55 @@ void rightmotor(void *argument)
 {
   /* USER CODE BEGIN rightmotor */
   /* Infinite loop */
-	uint16_t pwmVal=0;
-
-		HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
-
-
-
+	uint16_t pwmVal=2000;
+	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
+	int x;
 	  for(;;)
 	  {
-
-		  while (pwmVal < 3000)
-		  	  {
-
-		  		  //Motor D
-		  		  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
-		  		  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
-		  		  //MotorC
-
-		  		  pwmVal++;
-		  		  //Modify the comparison value for the duty cycle
-		  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
-
-		  		  osDelay(10);
-		  	  }
-		  	  while (pwmVal > 0)
-		  	  	  {
-
-
-		  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
-		  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
-		  		  	  //Motor C
-
-		  	  		  pwmVal--;
-		  	  		//Modify the comparison value for the duty cycle
-		  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
-
-		  	  		  osDelay(10);
-		 	  	  }
-
+		  x=atoi(value);
+		  switch(x) {
+		     case 10  :
+				  		  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
+				  		  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
+				  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+				  		  osDelay(10);
+				  		  break;
+		     case 11  :
+		     			HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
+		     			HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
+		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+		     			osDelay(10);
+		     			break;
+		     case 12  :
+		     			HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
+		     			HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
+		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+		     			osDelay(10);
+		     			break;
+		     case 20 :
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+			  	  		  osDelay(10);
+		     case 21 :
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+			  	  		  osDelay(10);
+			  	  		  break;
+		     case 22 :
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+			  	  		  osDelay(10);
+			  	  		  break;
+			  case 0  :
+		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
+		    	 	 	break;
+		     default :
+		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
+		    	 	 	break;
+		  }
 	  }
   /* USER CODE END rightmotor */
 }
@@ -673,48 +684,56 @@ void leftmotor(void *argument)
 {
   /* USER CODE BEGIN leftmotor */
   /* Infinite loop */
-	uint16_t pwmVal=0;
-
+	uint16_t pwmVal=1500;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
-
-
-
-
-
-  for(;;)
-  {
-	  while (pwmVal < 3000)
-	  	  {
-
-
-	  		  //Motor D
-	  		  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
-	  		  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
-	  		  //MotorC
-
-	  		  pwmVal++;
-	  		  //Modify the comparison value for the duty cycle
-	  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
-
-	  		  osDelay(10);
-	  	  }
-	  	  while (pwmVal > 0)
-	  	  	  {
-
-
-	  		  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
-	  		  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
-	  		  	  //Motor C
-
-	  	  		  pwmVal--;
-	  	  		//Modify the comparison value for the duty cycle
-	  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
-
-	  	  		  osDelay(10);
-	 	  	  }
-
-
-
+	int x;
+		for(;;)
+			{
+				x=atoi(value);
+				switch(x) {
+	  	  	  	case 10 :
+	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
+	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+	    		  		 osDelay(10);
+	    		  		 break;
+	  	  	  	case 11 :
+	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
+	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+	    		  		 osDelay(10);
+	    		  		 break;
+	  	  	  	case 12 :
+	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
+	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+	    		  		 osDelay(10);
+	    		  		 break;
+	  	  	  	case 20  :
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+		  		  	  	  osDelay(10);
+		  		  	  	  break;
+	  	  	  	case 21  :
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+		  		  	  	  osDelay(10);
+		  		  	  	  break;
+	  	  	  	case 22  :
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+		  		  	  	  osDelay(10);
+		  		  	  	  break;
+	  	  	  	case 0  :
+	  	  	  			  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, 0);
+	  	  			      break;
+	     default :
+						  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, 0);
+						  break;
+	  }
   }
   /* USER CODE END leftmotor */
 }
