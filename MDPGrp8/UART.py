@@ -9,7 +9,7 @@ while 1:
     i=i+1
     
     data=ser.readline().decode('ascii')
-    ser.write(bytes(listt[i%6], 'UTF-8'))
+    ser.write(bytes(input(), 'UTF-8'))
     print(data)
     
     

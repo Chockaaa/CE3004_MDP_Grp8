@@ -21,6 +21,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "oled.h"
+#include "stdio.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -69,6 +70,13 @@ const osThreadAttr_t LeftMotorTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for SensorTask */
+osThreadId_t SensorTaskHandle;
+const osThreadAttr_t SensorTask_attributes = {
+  .name = "SensorTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -84,6 +92,7 @@ static void MX_USART3_UART_Init(void);
 void StartDefaultTask(void *argument);
 void rightmotor(void *argument);
 void leftmotor(void *argument);
+void sensor(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -98,8 +107,8 @@ void leftmotor(void *argument);
   * @brief  The application entry point.
   * @retval int
   */
-
-	uint8_t aRxBuffer[20];
+uint8_t aRxBuffer[2];
+uint8_t value[2];
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -132,7 +141,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   OLED_Init();
   /* USER CODE END 2 */
-HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,10);
+
   /* Init scheduler */
   osKernelInitialize();
 
@@ -161,6 +170,9 @@ HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,10);
 
   /* creation of LeftMotorTask */
   LeftMotorTaskHandle = osThreadNew(leftmotor, NULL, &LeftMotorTask_attributes);
+
+  /* creation of SensorTask */
+  SensorTaskHandle = osThreadNew(sensor, NULL, &SensorTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -555,7 +567,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	UNUSED(huart);
 
-	HAL_UART_Transmit(&huart3, (uint8_t *)aRxBuffer,10,0xFFFF);
+	//HAL_UART_Transmit(&huart3, (uint8_t *)aRxBuffer,12,0xFFFF);
 }
 /* USER CODE END 4 */
 
@@ -571,7 +583,8 @@ void StartDefaultTask(void *argument)
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
 	uint8_t hello[20]="Hello World!\0";
-	//HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
+
+	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 	uint8_t ch='A';
   for(;;)
   {	/*
@@ -584,11 +597,14 @@ void StartDefaultTask(void *argument)
 	  htim1.Instance->CCR4=72;//center
 	  osDelay(5000);
 	*/
-	  HAL_UART_Transmit(&huart3,(uint8_t *)&ch,1,0xFFFF);
+	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,2);
 	OLED_ShowString(10,10,hello);
+	sprintf(value,"%s\0",aRxBuffer);
+	OLED_ShowString(10,40,value);
 	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 	OLED_Refresh_Gram();
-    osDelay(1000);
+	osDelay(1000);
+    HAL_UART_Transmit(&huart3,(uint8_t *)&value,2,0xFFFF);
   }
   /* USER CODE END 5 */
 }
@@ -604,92 +620,63 @@ void rightmotor(void *argument)
 {
   /* USER CODE BEGIN rightmotor */
   /* Infinite loop */
-	uint16_t pwmVal=0;
-
-		HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
-		HAL_TIM_Encoder_Start(&htim3,TIM_CHANNEL_ALL);
-			int cnt1,cnt2,diff;
-			uint32_t tick;
-			uint16_t dir;
-			uint8_t hello[20];
-			cnt1=__HAL_TIM_GET_COUNTER(&htim3);
-			tick=HAL_GetTick();
-
-
+	uint16_t pwmVal=1500;
+	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
+	int x;
 	  for(;;)
 	  {
-		  while (pwmVal < 3000)
-		  	  {
-			  if(HAL_GetTick()-tick>1000L){
-			  		  		  cnt2=__HAL_TIM_GET_COUNTER(&htim3);
-			  		  		  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)){
-			  		  			  if(cnt2<cnt1)
-			  		  				  diff=cnt1-cnt2;
-			  		  			  else
-			  		  				  diff=(65535-cnt2)+cnt1;
-			  		  		  }
-			  		  		  else{
-			  		  			  if(cnt2>cnt1)
-			  		  				  diff=cnt2-cnt1;
-			  		  			  else
-			  		  				  diff=(65535-cnt1)+cnt2;
-			  		  	  	  	  }
-			  		  		sprintf(hello, "S:%5d\0", diff);
-			  		  		OLED_ShowString(50,30,hello);
-			  		  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3);
-			  		  		sprintf(hello, "RD:%2d\0", dir);
-			  		  		OLED_ShowString(10,30,hello);
-			  		  		cnt1=__HAL_TIM_GET_COUNTER(&htim3);
-			  		  		tick=HAL_GetTick();
-			  	  	  }
-
-		  		  //Motor D
-		  		  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
-		  		  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
-		  		  //MotorC
-
-		  		  pwmVal++;
-		  		  //Modify the comparison value for the duty cycle
-		  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
-
-		  		  osDelay(10);
-		  	  }
-		  	  while (pwmVal > 0)
-		  	  	  {
-
-		  		if(HAL_GetTick()-tick>1000L){
-		  		cnt2=__HAL_TIM_GET_COUNTER(&htim3);
-		  		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)){
-		  				if(cnt2<cnt1)
-		  					diff=cnt1-cnt2;
-		  				else
-		  					diff=(65535-cnt2)+cnt1;
-		  					  		  		  }
-		  				else{
-		  				if(cnt2>cnt1)
-		  					diff=cnt2-cnt1;
-		  				else
-		  					diff=(65535-cnt1)+cnt2;
-		  					  		  	  	  }
-		  				sprintf(hello, "S:%5d\0", diff);
-		  				OLED_ShowString(50,30,hello);
-		  				dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3);
-		  				sprintf(hello, "RD:%2d\0", dir);
-		  				OLED_ShowString(10,30,hello);
-		  				cnt1=__HAL_TIM_GET_COUNTER(&htim3);
-		  				tick=HAL_GetTick();
-		  					  	  	  }
-		  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
-		  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
-		  		  	  //Motor C
-
-		  	  		  pwmVal--;
-		  	  		//Modify the comparison value for the duty cycle
-		  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
-
-		  	  		  osDelay(10);
-		 	  	  }
-
+		  x=atoi(value);
+		  switch(x) {
+		     case 10  :
+		    	 	 	  htim1.Instance->CCR4=72;
+				  		  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
+				  		  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
+				  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+				  		  osDelay(10);
+				  		  break;
+		     case 11  :
+		    	 	 	htim1.Instance->CCR4=82;
+		     			HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
+		     			HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
+		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+		     			osDelay(10);
+		     			break;
+		     case 12  :
+		    	 	 	htim1.Instance->CCR4=62;
+		     			HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
+		     			HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
+		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+		     			osDelay(10);
+		     			break;
+		     case 20 :
+		    	 	 	  htim1.Instance->CCR4=72;
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+			  	  		  osDelay(10);
+		     case 21 :
+		    	 	 	  htim1.Instance->CCR4=82;
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+			  	  		  osDelay(10);
+			  	  		  break;
+		     case 22 :
+		    	 	 	  htim1.Instance->CCR4=62;
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+			  	  		  osDelay(10);
+			  	  		  break;
+			  case 0  :
+				  	  	  htim1.Instance->CCR4=72;
+		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
+		    	 	 	break;
+		     default :
+		    	 	 	  htim1.Instance->CCR4=72;
+		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
+		    	 	 	break;
+		  }
 	  }
   /* USER CODE END rightmotor */
 }
@@ -705,98 +692,136 @@ void leftmotor(void *argument)
 {
   /* USER CODE BEGIN leftmotor */
   /* Infinite loop */
-	uint16_t pwmVal=0;
-
+	uint16_t pwmVal=1500;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
-
-	HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
-	int cnt1,cnt2,diff;
-	uint32_t tick;
-	uint16_t dir;
-	uint8_t hello[20];
-	cnt1=__HAL_TIM_GET_COUNTER(&htim2);
-	tick=HAL_GetTick();
-
-
-
-  for(;;)
-  {
-	  while (pwmVal < 3000)
-	  	  {
-		  	  if(HAL_GetTick()-tick>1000L){
-		  		  cnt2=__HAL_TIM_GET_COUNTER(&htim2);
-		  		  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)){
-		  			  if(cnt2<cnt1)
-		  				  diff=cnt1-cnt2;
-		  			  else
-		  				  diff=(65535-cnt2)+cnt1;
-		  		  }
-		  		  else{
-		  			  if(cnt2>cnt1)
-		  				  diff=cnt2-cnt1;
-		  			  else
-		  				  diff=(65535-cnt1)+cnt2;
-		  	  	  	  }
-		  		sprintf(hello, "S:%5d\0", diff);
-		  		OLED_ShowString(50,20,hello);
-		  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
-		  		sprintf(hello, "LD:%2d\0", dir);
-		  		OLED_ShowString(10,20,hello);
-		  		cnt1=__HAL_TIM_GET_COUNTER(&htim2);
-		  		tick=HAL_GetTick();
-	  	  }
-
-	  		  //Motor D
-	  		  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
-	  		  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
-	  		  //MotorC
-
-	  		  pwmVal++;
-	  		  //Modify the comparison value for the duty cycle
-	  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
-
-	  		  osDelay(10);
-	  	  }
-	  	  while (pwmVal > 0)
-	  	  	  {
-	  		 if(HAL_GetTick()-tick>1000L){
-	  				  		  cnt2=__HAL_TIM_GET_COUNTER(&htim2);
-	  				  		  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)){
-	  				  			  if(cnt2<cnt1)
-	  				  				  diff=cnt1-cnt2;
-	  				  			  else
-	  				  				  diff=(65535-cnt2)+cnt1;
-	  				  		  }
-	  				  		  else{
-	  				  			  if(cnt2>cnt1)
-	  				  				  diff=cnt2-cnt1;
-	  				  			  else
-	  				  				  diff=(65535-cnt1)+cnt2;
-	  				  	  	  	  }
-	  				  		sprintf(hello, "S:%5d\0", diff);
-	  				  		OLED_ShowString(50,20,hello);
-	  				  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
-	  				  		sprintf(hello, "LD:%2d\0", dir);
-	  				  		OLED_ShowString(10,20,hello);
-	  				  		cnt1=__HAL_TIM_GET_COUNTER(&htim2);
-	  				  		tick=HAL_GetTick();
-	  			  	  }
-
-	  		  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
-	  		  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
-	  		  	  //Motor C
-
-	  	  		  pwmVal--;
-	  	  		//Modify the comparison value for the duty cycle
-	  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
-
-	  	  		  osDelay(10);
-	 	  	  }
-
-
-
+	int x;
+		for(;;)
+			{
+				x=atoi(value);
+				switch(x) {
+	  	  	  	case 10 :
+	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
+	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+	    		  		 osDelay(10);
+	    		  		 break;
+	  	  	  	case 11 :
+	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
+	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+	    		  		 osDelay(10);
+	    		  		 break;
+	  	  	  	case 12 :
+	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
+	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+	    		  		 osDelay(10);
+	    		  		 break;
+	  	  	  	case 20  :
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+		  		  	  	  osDelay(10);
+		  		  	  	  break;
+	  	  	  	case 21  :
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+		  		  	  	  osDelay(10);
+		  		  	  	  break;
+	  	  	  	case 22  :
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
+		  		  	  	  osDelay(10);
+		  		  	  	  break;
+	  	  	  	case 0  :
+	  	  	  			  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, 0);
+	  	  			      break;
+	     default :
+						  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, 0);
+						  break;
+	  }
   }
   /* USER CODE END leftmotor */
+}
+
+/* USER CODE BEGIN Header_sensor */
+/**
+* @brief Function implementing the SensorTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_sensor */
+void sensor(void *argument)
+{
+  /* USER CODE BEGIN sensor */
+  /* Infinite loop */
+
+		HAL_TIM_Encoder_Start(&htim3,TIM_CHANNEL_ALL);
+		int cnt1,cnt2,diff;
+		uint32_t tick;
+		uint16_t dir;
+		uint8_t hello[20];
+		cnt1=__HAL_TIM_GET_COUNTER(&htim3);
+
+
+		HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
+		int cnt3,cnt4;
+		uint16_t dir3;
+		cnt3=__HAL_TIM_GET_COUNTER(&htim2);
+		tick=HAL_GetTick();
+  for(;;)
+  {
+	  	  if(HAL_GetTick()-tick>1000L){
+	  		  		cnt2=__HAL_TIM_GET_COUNTER(&htim3);
+	  		  		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)){
+	  		  				if(cnt2<cnt1)
+	  		  					diff=cnt1-cnt2;
+	  		  				else
+	  		  					diff=(65535-cnt2)+cnt1;
+	  		  					  		  		  }
+	  		  				else{
+	  		  				if(cnt2>cnt1)
+	  		  					diff=cnt2-cnt1;
+	  		  				else
+	  		  					diff=(65535-cnt1)+cnt2;
+	  		  					  		  	  	  }
+	  		  				sprintf(hello, "S:%5d\0", diff);
+	  		  				OLED_ShowString(50,30,hello);
+	  		  				dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3);
+	  		  				sprintf(hello, "RD:%2d\0", dir);
+	  		  				OLED_ShowString(10,30,hello);
+	  		  				cnt1=__HAL_TIM_GET_COUNTER(&htim3);
+	  		  				tick=HAL_GetTick();
+
+	  		  		  	cnt4=__HAL_TIM_GET_COUNTER(&htim2);
+	  		  		  	if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)){
+	  		  		  		  	if(cnt4<cnt3)
+	  		  		  		  		diff=cnt3-cnt4;
+	  		  		  		  	else
+	  		  		  		  		diff=(65535-cnt4)+cnt3;
+	  		  		  		  		}
+	  		  		  		  	else{
+	  		  		  		  		if(cnt4>cnt3)
+	  		  		  		  			diff=cnt4-cnt3;
+	  		  		  		  		else
+	  		  		  		  			diff=(65535-cnt3)+cnt4;
+	  		  		  		  		}
+	  		  		  		  			  		sprintf(hello, "S:%5d\0", diff);
+	  		  		  		  			  		OLED_ShowString(50,20,hello);
+	  		  		  		  			  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
+	  		  		  		  			  		sprintf(hello, "LD:%2d\0", dir);
+	  		  		  		  			  		OLED_ShowString(10,20,hello);
+	  		  		  		  			  		cnt3=__HAL_TIM_GET_COUNTER(&htim2);
+	  		  		  		  			  		tick=HAL_GetTick();
+
+	  		  					  	  	  }
+
+
+    osDelay(1);
+  }
+  /* USER CODE END sensor */
 }
 
 /**
