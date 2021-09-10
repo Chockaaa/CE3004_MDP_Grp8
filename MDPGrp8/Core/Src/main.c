@@ -107,8 +107,8 @@ void sensor(void *argument);
   * @brief  The application entry point.
   * @retval int
   */
-uint8_t aRxBuffer[2];
-uint8_t value[2];
+uint8_t aRxBuffer[4];
+uint8_t value[4];
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -597,17 +597,18 @@ void StartDefaultTask(void *argument)
 	  htim1.Instance->CCR4=72;//center
 	  osDelay(5000);
 	*/
-	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,2);
+	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,4);
 	OLED_ShowString(10,10,hello);
 	sprintf(value,"%s\0",aRxBuffer);
 	OLED_ShowString(10,40,value);
 	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 	OLED_Refresh_Gram();
 	osDelay(1000);
-    HAL_UART_Transmit(&huart3,(uint8_t *)&value,2,0xFFFF);
+    HAL_UART_Transmit(&huart3,(uint8_t *)&value,4,0xFFFF);
   }
   /* USER CODE END 5 */
 }
+
 
 /* USER CODE BEGIN Header_rightmotor */
 /**
@@ -623,16 +624,19 @@ void rightmotor(void *argument)
 	uint16_t pwmVal=1000;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
 	int x;
+	uint32_t dist=0;
 	  for(;;)
 	  {
 		  x=atoi(value);
+		  dist = (uint32_t)(x%100)*1000; //Get last 2 Digit
+		  x/=100;
 		  switch(x) {
 		     case 10  :
 		    	 	 	  htim1.Instance->CCR4=72;
 				  		  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
 				  		  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
 				  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
-				  		  osDelay(10);
+				  		  osDelay(dist);
 				  		  break;
 		     case 11  :
 		    	 	 	htim1.Instance->CCR4=82;
@@ -678,6 +682,8 @@ void rightmotor(void *argument)
 		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 		    	 	 	break;
 		  }
+
+//		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 	  }
   /* USER CODE END rightmotor */
 }
