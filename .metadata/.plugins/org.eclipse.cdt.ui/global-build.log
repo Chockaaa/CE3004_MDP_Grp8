@@ -9229,3 +9229,10 @@ Finished building: MDPGrp8.bin
  
 Finished building: MDPGrp8.list
  
+10:46:06 **** Incremental Build of configuration Release for project MDPGrp8 ****
+make -j12 all 
+arm-none-eabi-size   MDPGrp8.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22332	    124	   9468	  31924	   7cb4	MDPGrp8.elf
+Finished building: default.size.stdout
+ 
