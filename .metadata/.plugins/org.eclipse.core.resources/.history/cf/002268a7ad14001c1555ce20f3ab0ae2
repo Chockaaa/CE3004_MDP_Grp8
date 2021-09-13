@@ -699,21 +699,18 @@ void leftmotor(void *argument)
 {
   /* USER CODE BEGIN leftmotor */
   /* Infinite loop */
-	uint16_t pwmVal=1000*1.045;
+	uint16_t pwmVal=1000;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
-	uint32_t dist=0;
 	int x;
 		for(;;)
 			{
-			  x=atoi(value);
-			  dist = (uint32_t)(x%100)*1000; //Get last 2 Digit
-			  x/=100;
+				x=atoi(value);
 				switch(x) {
 	  	  	  	case 10 :
 	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
 	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
-	    		  		 osDelay(dist);
+	    		  		 osDelay(10);
 	    		  		 break;
 	  	  	  	case 11 :
 	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
@@ -825,7 +822,8 @@ void sensor(void *argument)
 	  		  		  		  			  		OLED_ShowString(10,20,hello);
 	  		  		  		  			  		cnt3=__HAL_TIM_GET_COUNTER(&htim2);
 	  		  		  		  			  		tick=HAL_GetTick();
-
+	  		  		  		  			  		sprintf(hello, "%5d\0", HAL_GetTick()-tick);
+	  		  		  		  			  		OLED_ShowString(50,40,hello);
 	  		  					  	  	  }
 
 

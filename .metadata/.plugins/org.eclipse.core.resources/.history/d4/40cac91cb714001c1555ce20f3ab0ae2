@@ -621,7 +621,7 @@ void rightmotor(void *argument)
 {
   /* USER CODE BEGIN rightmotor */
   /* Infinite loop */
-	uint16_t pwmVal=1000;
+	uint16_t pwmVal=2000;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
 	int x;
 	uint32_t dist=0;
@@ -699,7 +699,7 @@ void leftmotor(void *argument)
 {
   /* USER CODE BEGIN leftmotor */
   /* Infinite loop */
-	uint16_t pwmVal=1000*1.045;
+	uint16_t pwmVal=2000*1.085;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
 	uint32_t dist=0;
 	int x;
