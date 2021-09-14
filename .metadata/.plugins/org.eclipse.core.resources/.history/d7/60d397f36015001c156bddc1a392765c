@@ -624,11 +624,11 @@ void rightmotor(void *argument)
 	uint16_t pwmVal=1000;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
 	int x;
-	int dist=0;
+	uint32_t dist=0;
 	  for(;;)
 	  {
 		  x=atoi(value);
-		  dist = (x%100)*1000; //Get last 2 Digit
+		  dist = (uint32_t)(x%100)*1000; //Get last 2 Digit
 		  x/=100;
 		  switch(x) {
 		     case 10  :
@@ -682,7 +682,7 @@ void rightmotor(void *argument)
 		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 		    	 	 	break;
 		  }
-		  x=0;
+
 //		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 	  }
   /* USER CODE END rightmotor */
@@ -699,18 +699,21 @@ void leftmotor(void *argument)
 {
   /* USER CODE BEGIN leftmotor */
   /* Infinite loop */
-	uint16_t pwmVal=1000;
+	uint16_t pwmVal=1000*1.045;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
+	uint32_t dist=0;
 	int x;
 		for(;;)
-			{
-				x=atoi(value);
+			{ pwmVal=pwmVal=(rightspeed/leftspeed);
+			  x=atoi(value);
+			  dist = (uint32_t)(x%100)*1000; //Get last 2 Digit
+			  x/=100;
 				switch(x) {
 	  	  	  	case 10 :
 	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
 	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
-	    		  		 osDelay(10);
+	    		  		 osDelay(dist);
 	    		  		 break;
 	  	  	  	case 11 :
 	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);

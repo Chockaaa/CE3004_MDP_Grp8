@@ -9855,3 +9855,11 @@
 2021-09-14 00:22:02,125 [WARN] TasksAndQueuesTab:770 - max value is: 768.0
 2021-09-14 00:22:11,097 [INFO] Gpio:254 - dependency for GPIO [TIM1, TIM2, TIM3, USART3]
 2021-09-14 00:22:19,861 [ERROR] RtosPanel:552 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2021-09-14 21:09:07,914 [INFO] Activator:177 - 
+
+
+2021-09-14 21:09:07,916 [INFO] Activator:178 - !SESSION log4j initialized
+2021-09-15 00:49:23,638 [INFO] Activator:177 - 
+
+
+2021-09-15 00:49:23,640 [INFO] Activator:178 - !SESSION log4j initialized

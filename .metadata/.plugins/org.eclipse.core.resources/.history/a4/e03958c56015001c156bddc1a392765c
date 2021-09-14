@@ -597,14 +597,14 @@ void StartDefaultTask(void *argument)
 	  htim1.Instance->CCR4=72;//center
 	  osDelay(5000);
 	*/
-	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,2);
+	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,4);
 	OLED_ShowString(10,10,hello);
 	sprintf(value,"%s\0",aRxBuffer);
 	OLED_ShowString(10,40,value);
 	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 	OLED_Refresh_Gram();
 	osDelay(1000);
-    HAL_UART_Transmit(&huart3,(uint8_t *)&value,2,0xFFFF);
+    HAL_UART_Transmit(&huart3,(uint8_t *)&value,4,0xFFFF);
   }
   /* USER CODE END 5 */
 }
@@ -628,7 +628,7 @@ void rightmotor(void *argument)
 	  for(;;)
 	  {
 		  x=atoi(value);
-		  dist = x%100; //Get last 2 Digit
+		  dist = (uint32_t)(x%100)*1000; //Get last 2 Digit
 		  x/=100;
 		  switch(x) {
 		     case 10  :
@@ -636,8 +636,7 @@ void rightmotor(void *argument)
 				  		  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
 				  		  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
 				  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
-				  		  osDelay(2000);
-				  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
+				  		  osDelay(dist);
 				  		  break;
 		     case 11  :
 		    	 	 	htim1.Instance->CCR4=82;
@@ -683,6 +682,8 @@ void rightmotor(void *argument)
 		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 		    	 	 	break;
 		  }
+
+//		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 	  }
   /* USER CODE END rightmotor */
 }
@@ -698,18 +699,21 @@ void leftmotor(void *argument)
 {
   /* USER CODE BEGIN leftmotor */
   /* Infinite loop */
-	uint16_t pwmVal=1000;
+	uint16_t pwmVal=1000*1.045;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
+	uint32_t dist=0;
 	int x;
 		for(;;)
 			{
-				x=atoi(value);
+			  x=atoi(value);
+			  dist = (uint32_t)(x%100)*1000; //Get last 2 Digit
+			  x/=100;
 				switch(x) {
 	  	  	  	case 10 :
 	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
 	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
-	    		  		 osDelay(10);
+	    		  		 osDelay(dist);
 	    		  		 break;
 	  	  	  	case 11 :
 	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);

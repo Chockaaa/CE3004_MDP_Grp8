@@ -109,6 +109,8 @@ void sensor(void *argument);
   */
 uint8_t aRxBuffer[4];
 uint8_t value[4];
+uint16_t rightspeed=1;
+uint16_t leftspeed=1;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -628,7 +630,7 @@ void rightmotor(void *argument)
 	  for(;;)
 	  {
 		  x=atoi(value);
-		  //dist = x%100; //Get last 2 Digit
+		  dist = (uint32_t)(x%100)*1000; //Get last 2 Digit
 		  x/=100;
 		  switch(x) {
 		     case 10  :
@@ -636,7 +638,7 @@ void rightmotor(void *argument)
 				  		  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
 				  		  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
 				  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
-				  		  osDelay(2000);
+				  		  osDelay(dist);
 				  		  break;
 		     case 11  :
 		    	 	 	htim1.Instance->CCR4=82;
@@ -682,6 +684,8 @@ void rightmotor(void *argument)
 		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 		    	 	 	break;
 		  }
+
+//		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 	  }
   /* USER CODE END rightmotor */
 }
@@ -697,18 +701,21 @@ void leftmotor(void *argument)
 {
   /* USER CODE BEGIN leftmotor */
   /* Infinite loop */
-	uint16_t pwmVal=1000;
+	uint16_t pwmVal=1000*(rightspeed/leftspeed);
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
+	uint32_t dist=0;
 	int x;
 		for(;;)
 			{
-				x=atoi(value);
+			  x=atoi(value);
+			  dist = (uint32_t)(x%100)*1000; //Get last 2 Digit
+			  x/=100;
 				switch(x) {
 	  	  	  	case 10 :
 	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
 	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
-	    		  		 osDelay(10);
+	    		  		 osDelay(dist);
 	    		  		 break;
 	  	  	  	case 11 :
 	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
@@ -793,12 +800,14 @@ void sensor(void *argument)
 	  		  					diff=(65535-cnt1)+cnt2;
 	  		  					  		  	  	  }
 	  		  				sprintf(hello, "S:%5d\0", diff);
+	  		  				rightspeed=diff;
 	  		  				OLED_ShowString(50,30,hello);
 	  		  				dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3);
 	  		  				sprintf(hello, "RD:%2d\0", dir);
 	  		  				OLED_ShowString(10,30,hello);
 	  		  				cnt1=__HAL_TIM_GET_COUNTER(&htim3);
 	  		  				tick=HAL_GetTick();
+
 
 	  		  		  	cnt4=__HAL_TIM_GET_COUNTER(&htim2);
 	  		  		  	if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)){
@@ -814,12 +823,14 @@ void sensor(void *argument)
 	  		  		  		  			diff=(65535-cnt3)+cnt4;
 	  		  		  		  		}
 	  		  		  		  			  		sprintf(hello, "S:%5d\0", diff);
+	  		  		  		  			  		leftspeed=diff;
 	  		  		  		  			  		OLED_ShowString(50,20,hello);
 	  		  		  		  			  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
 	  		  		  		  			  		sprintf(hello, "LD:%2d\0", dir);
 	  		  		  		  			  		OLED_ShowString(10,20,hello);
 	  		  		  		  			  		cnt3=__HAL_TIM_GET_COUNTER(&htim2);
 	  		  		  		  			  		tick=HAL_GetTick();
+
 
 	  		  					  	  	  }
 
