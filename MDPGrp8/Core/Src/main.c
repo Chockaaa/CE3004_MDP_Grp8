@@ -701,7 +701,7 @@ void leftmotor(void *argument)
 {
   /* USER CODE BEGIN leftmotor */
   /* Infinite loop */
-	uint16_t pwmVal=1000*1.05;
+	uint16_t pwmVal=1000*1.06;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
 	uint32_t dist=0;
 	int x;
