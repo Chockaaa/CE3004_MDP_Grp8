@@ -20,8 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-#include "oled.h"
-#include "stdio.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -45,8 +44,6 @@
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
-TIM_HandleTypeDef htim4;
-TIM_HandleTypeDef htim5;
 TIM_HandleTypeDef htim8;
 
 UART_HandleTypeDef huart3;
@@ -91,8 +88,6 @@ static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_USART3_UART_Init(void);
-static void MX_TIM4_Init(void);
-static void MX_TIM5_Init(void);
 void StartDefaultTask(void *argument);
 void rightmotor(void *argument);
 void leftmotor(void *argument);
@@ -104,8 +99,7 @@ void sensor(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint8_t aRxBuffer[4];
-uint8_t value[4];
+
 /* USER CODE END 0 */
 
 /**
@@ -141,8 +135,6 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM1_Init();
   MX_USART3_UART_Init();
-  MX_TIM4_Init();
-  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
   OLED_Init();
   /* USER CODE END 2 */
@@ -332,18 +324,18 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 0;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 65535;
+  htim2.Init.Period = 7199;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  sConfig.EncoderMode = TIM_ENCODERMODE_TI1;
+  sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
   sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
   sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
   sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC1Filter = 0;
+  sConfig.IC1Filter = 10;
   sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
   sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
   sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC2Filter = 0;
+  sConfig.IC2Filter = 10;
   if (HAL_TIM_Encoder_Init(&htim2, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -406,104 +398,6 @@ static void MX_TIM3_Init(void)
   /* USER CODE BEGIN TIM3_Init 2 */
 
   /* USER CODE END TIM3_Init 2 */
-
-}
-
-/**
-  * @brief TIM4 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM4_Init(void)
-{
-
-  /* USER CODE BEGIN TIM4_Init 0 */
-
-  /* USER CODE END TIM4_Init 0 */
-
-  TIM_Encoder_InitTypeDef sConfig = {0};
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-
-  /* USER CODE BEGIN TIM4_Init 1 */
-
-  /* USER CODE END TIM4_Init 1 */
-  htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
-  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 65535;
-  htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
-  sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
-  sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
-  sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC1Filter = 10;
-  sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
-  sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
-  sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC2Filter = 10;
-  if (HAL_TIM_Encoder_Init(&htim4, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM4_Init 2 */
-
-  /* USER CODE END TIM4_Init 2 */
-
-}
-
-/**
-  * @brief TIM5 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM5_Init(void)
-{
-
-  /* USER CODE BEGIN TIM5_Init 0 */
-
-  /* USER CODE END TIM5_Init 0 */
-
-  TIM_Encoder_InitTypeDef sConfig = {0};
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-
-  /* USER CODE BEGIN TIM5_Init 1 */
-
-  /* USER CODE END TIM5_Init 1 */
-  htim5.Instance = TIM5;
-  htim5.Init.Prescaler = 0;
-  htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim5.Init.Period = 65535;
-  htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
-  sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
-  sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
-  sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC1Filter = 10;
-  sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
-  sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
-  sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC2Filter = 10;
-  if (HAL_TIM_Encoder_Init(&htim5, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM5_Init 2 */
-
-  /* USER CODE END TIM5_Init 2 */
 
 }
 
@@ -752,7 +646,7 @@ void rightmotor(void *argument)
   /* USER CODE BEGIN rightmotor */
   /* Infinite loop */
 	uint16_t pwmVal=1000;
-	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_4);
+	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
 	int x;
 	uint32_t dist=0;
 	  for(;;)
@@ -763,56 +657,56 @@ void rightmotor(void *argument)
 		  switch(x) {
 		     case 10  :
 		    	 	 	  htim1.Instance->CCR4=70;
-				  		  HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
-				  		  HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
-				  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
+				  		  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
+				  		  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
+				  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
 				  		  dist=dist*909;
 				  		  osDelay(dist);
 				  		  break;
 		     case 11  :
 		    	 	 	htim1.Instance->CCR4=88;
-		     			HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
-		     			HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
-		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
-		     			osDelay(dist*6800);
+		     			HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
+		     			HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
+		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+		     			osDelay(dist*8000);
 		     			break;
 		     case 12  :
 		    	 	 	htim1.Instance->CCR4=60;
-		     			HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
-		     			HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
-		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
-		     			osDelay(dist*6800);
+		     			HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_SET);
+		     			HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_RESET);
+		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+		     			osDelay(dist*8000);
 
 		     			break;
 		     case 20 :
 		    	 	 	htim1.Instance->CCR4=70;
-			  		  	HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
-			  		  	HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
-			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
+			  		  	HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
+			  		  	HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
 			  	  		dist=dist*909;
 			  	  		osDelay(dist);
 			  	  		break;
 		     case 21 :
 		    	 	 	  htim1.Instance->CCR4=88;
-			  		  	  HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
-			  		  	  HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
-			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
-			  	  		  osDelay(dist*6800);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+			  	  		  osDelay(dist*8000);
 			  	  		  break;
 		     case 22 :
 		    	 	 	  htim1.Instance->CCR4=60;
-			  		  	  HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
-			  		  	  HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
-			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
-			  	  		  osDelay(dist*6800);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN2_Pin, GPIO_PIN_RESET);
+			  		  	  HAL_GPIO_WritePin(GPIOA, BIN1_Pin, GPIO_PIN_SET);
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, pwmVal);
+			  	  		  osDelay(dist*8000);
 			  	  		  break;
 			  case 0  :
 				  	  	  htim1.Instance->CCR4=70;
-		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
+		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 		    	 	 	break;
 		     default :
 		    	 	 	  htim1.Instance->CCR4=70;
-		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
+		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_2, 0);
 		    	 	 	break;
 		  }
 
@@ -832,8 +726,8 @@ void leftmotor(void *argument)
 {
   /* USER CODE BEGIN leftmotor */
   /* Infinite loop */
-	uint16_t pwmVal=1000;
-	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);
+	uint16_t pwmVal=1000*1.06;
+	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
 	uint32_t dist=0;
 	int x;
 		for(;;)
@@ -843,48 +737,48 @@ void leftmotor(void *argument)
 			  x/=100;
 				switch(x) {
 	  	  	  	case 10 :
-	    		 	 	 HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
-	    		  		 HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
-	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
+	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
+	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
 	    		  		 dist=dist*909;
 	    		  		 osDelay(dist);
 	    		  		 break;
 	  	  	  	case 11 :
-	    		 	 	 HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
-	    		  		 HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
-	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
+	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
+	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
 	    		  		 osDelay(dist*6800);
 	    		  		 break;
 	  	  	  	case 12 :
-	    		 	 	 HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
-	    		  		 HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
-	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
+	    		 	 	 HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_SET);
+	    		  		 HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_RESET);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
 	    		  		 osDelay(dist*6800);
 	    		  		 break;
 	  	  	  	case 20  :
-		  		  	  	  HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_RESET);
-		  		  	  	  HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_SET);
-		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
 		  		  	  	  dist=dist*909;
 		  		  	  	  osDelay(dist);
 		  		  	  	  break;
 	  	  	  	case 21  :
-		  		  	  	  HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_RESET);
-		  		  	  	  HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_SET);
-		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
 		  		  	  	  osDelay(dist*6800);
 		  		  	  	  break;
 	  	  	  	case 22  :
-		  		  	  	  HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_RESET);
-		  		  	  	  HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_SET);
-		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN2_Pin, GPIO_PIN_RESET);
+		  		  	  	  HAL_GPIO_WritePin(GPIOA, AIN1_Pin, GPIO_PIN_SET);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, pwmVal);
 		  		  	  	  osDelay(dist*6800);
 		  		  	  	  break;
 	  	  	  	case 0  :
-	  	  	  			  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
+	  	  	  			  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, 0);
 	  	  			      break;
 	     default :
-						  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
+						  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, 0);
 						  break;
 	  }
   }
@@ -903,24 +797,24 @@ void sensor(void *argument)
   /* USER CODE BEGIN sensor */
   /* Infinite loop */
 
-		HAL_TIM_Encoder_Start(&htim5,TIM_CHANNEL_ALL);
+		HAL_TIM_Encoder_Start(&htim3,TIM_CHANNEL_ALL);
 		int cnt1,cnt2,diff;
 		uint32_t tick;
 		uint16_t dir;
 		uint8_t hello[20];
-		cnt1=__HAL_TIM_GET_COUNTER(&htim5);
+		cnt1=__HAL_TIM_GET_COUNTER(&htim3);
 
 
-		HAL_TIM_Encoder_Start(&htim4,TIM_CHANNEL_ALL);
+		HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
 		int cnt3,cnt4;
 		uint16_t dir3;
-		cnt3=__HAL_TIM_GET_COUNTER(&htim4);
+		cnt3=__HAL_TIM_GET_COUNTER(&htim2);
 		tick=HAL_GetTick();
   for(;;)
   {
 	  	  if(HAL_GetTick()-tick>100L){
-	  		  		cnt2=__HAL_TIM_GET_COUNTER(&htim5);
-	  		  		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5)){
+	  		  		cnt2=__HAL_TIM_GET_COUNTER(&htim3);
+	  		  		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3)){
 	  		  				if(cnt2<cnt1)
 	  		  					diff=cnt1-cnt2;
 	  		  				else
@@ -934,14 +828,14 @@ void sensor(void *argument)
 	  		  					  		  	  	  }
 	  		  				sprintf(hello, "S:%5d\0", diff);
 	  		  				OLED_ShowString(50,30,hello);
-	  		  				dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5);
+	  		  				dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim3);
 	  		  				sprintf(hello, "RD:%2d\0", dir);
 	  		  				OLED_ShowString(10,30,hello);
-	  		  				cnt1=__HAL_TIM_GET_COUNTER(&htim5);
+	  		  				cnt1=__HAL_TIM_GET_COUNTER(&htim3);
 	  		  				tick=HAL_GetTick();
 
-	  		  		  	cnt4=__HAL_TIM_GET_COUNTER(&htim4);
-	  		  		  	if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4)){
+	  		  		  	cnt4=__HAL_TIM_GET_COUNTER(&htim2);
+	  		  		  	if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2)){
 	  		  		  		  	if(cnt4<cnt3)
 	  		  		  		  		diff=cnt3-cnt4;
 	  		  		  		  	else
@@ -955,10 +849,10 @@ void sensor(void *argument)
 	  		  		  		  		}
 	  		  		  		  			  		sprintf(hello, "S:%5d\0", diff);
 	  		  		  		  			  		OLED_ShowString(50,20,hello);
-	  		  		  		  			  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4);
+	  		  		  		  			  		dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim2);
 	  		  		  		  			  		sprintf(hello, "LD:%2d\0", dir);
 	  		  		  		  			  		OLED_ShowString(10,20,hello);
-	  		  		  		  			  		cnt3=__HAL_TIM_GET_COUNTER(&htim4);
+	  		  		  		  			  		cnt3=__HAL_TIM_GET_COUNTER(&htim2);
 	  		  		  		  			  		tick=HAL_GetTick();
 
 	  		  					  	  	  }

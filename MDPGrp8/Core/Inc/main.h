@@ -72,16 +72,24 @@ void Error_Handler(void);
 #define BIN1_GPIO_Port GPIOA
 #define BIN2_Pin GPIO_PIN_5
 #define BIN2_GPIO_Port GPIOA
+#define CIN2_Pin GPIO_PIN_5
+#define CIN2_GPIO_Port GPIOC
 #define OLED_RST_Pin GPIO_PIN_7
 #define OLED_RST_GPIO_Port GPIOE
 #define OLED_DC_Pin GPIO_PIN_8
 #define OLED_DC_GPIO_Port GPIOE
 #define LED3_Pin GPIO_PIN_10
 #define LED3_GPIO_Port GPIOE
-#define PWMA_Pin GPIO_PIN_6
-#define PWMA_GPIO_Port GPIOC
-#define PWMB_Pin GPIO_PIN_7
-#define PWMB_GPIO_Port GPIOC
+#define CIN1_Pin GPIO_PIN_12
+#define CIN1_GPIO_Port GPIOE
+#define DIN1_Pin GPIO_PIN_11
+#define DIN1_GPIO_Port GPIOB
+#define DIN2_Pin GPIO_PIN_15
+#define DIN2_GPIO_Port GPIOB
+#define TIM8_CH1_Pin GPIO_PIN_6
+#define TIM8_CH1_GPIO_Port GPIOC
+#define TIM8_CH2_Pin GPIO_PIN_7
+#define TIM8_CH2_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
