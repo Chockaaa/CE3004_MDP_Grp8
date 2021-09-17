@@ -1415,3 +1415,18 @@ C Model Exception: C Model Status [Element main.c does not exist.]
 	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
 !SUBENTRY 1 org.eclipse.cdt.core 4 969 2021-09-17 00:32:14.237
 !MESSAGE Element main.c does not exist.
+!SESSION 2021-09-17 09:46:55.589 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-09-17 09:47:08.979
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-09-17 09:47:09.139
+!MESSAGE Log4j initialized with config file C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-09-17 09:47:19.119
+!MESSAGE Started RMI Server, listening on port 41337
