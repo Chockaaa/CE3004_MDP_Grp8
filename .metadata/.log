@@ -1830,3 +1830,33 @@ java.lang.IllegalStateException: Provisioning system has not been initialized
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getPlanner(UpdateChecker.java:176)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:136)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:78)
+!SESSION 2021-09-26 13:06:52.507 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-09-26 13:08:15.716
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-09-26 13:08:15.775
+!MESSAGE Log4j initialized with config file C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-09-26 13:08:20.968
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2021-09-26 17:42:48.919 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-09-26 17:42:54.391
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-09-26 17:42:54.442
+!MESSAGE Log4j initialized with config file C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-09-26 17:42:59.229
+!MESSAGE Started RMI Server, listening on port 41337
