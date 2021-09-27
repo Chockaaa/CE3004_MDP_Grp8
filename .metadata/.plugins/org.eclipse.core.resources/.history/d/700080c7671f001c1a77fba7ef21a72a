@@ -787,11 +787,11 @@ void rightmotor(void *argument)
 		     			HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
 		     			HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
 		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 1500);
-		     			dist=dist*41;
+		     			dist=dist*44;
 		     			osDelay(dist);
-		     			htim1.Instance->CCR4=85;
-		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-		     			osDelay(100);
+		     			htim1.Instance->CCR4=75;
+
+
 		     			break;
 		     case 20 :
 		    	 	 	htim1.Instance->CCR4=75;
@@ -818,11 +818,8 @@ void rightmotor(void *argument)
 			  		  	  HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
 			  		  	  HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
 			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 1500);
-			  	  		  osDelay(dist*41);
-			  	  		  htim1.Instance->CCR4=85;
-			  	  	      __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-			  	  		  osDelay(100);
-
+			  	  		  osDelay(dist*44);
+			  	  		htim1.Instance->CCR4=75;
 
 			  	  		  break;
 			  case 0  :
@@ -882,11 +879,8 @@ void leftmotor(void *argument)
 	    		 	 	 HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
 	    		  		 HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 400);
-	    		  		 dist=dist*40;
+	    		  		 dist=dist*42;
 	    		  		 osDelay(dist);
-	    		  		 htim1.Instance->CCR4=85;
-	    		  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-	    		  	     osDelay(100);
 
 	    		  		 break;
 	  	  	  	case 20  :
@@ -909,10 +903,7 @@ void leftmotor(void *argument)
 		  		  	  	  HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_RESET);
 		  		  	  	  HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_SET);
 		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 400);
-		  		  	  	  osDelay(dist*40);
-		  		  	      htim1.Instance->CCR4=85;
-		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-		  		  	  	  osDelay(100);
+		  		  	  	  osDelay(dist*42);
 
 		  		  	  	  break;
 	  	  	  	case 0  :

@@ -775,7 +775,7 @@ void rightmotor(void *argument)
 		     			HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
 		     			HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
 		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 400);
-		     			dist=(dist*46);
+		     			dist=(dist*49);
 		     			osDelay(dist); //+3
 
 		     			htim1.Instance->CCR4=75;
@@ -787,11 +787,11 @@ void rightmotor(void *argument)
 		     			HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
 		     			HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
 		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 1500);
-		     			dist=dist*41;
+		     			dist=dist*48;
 		     			osDelay(dist);
-		     			htim1.Instance->CCR4=85;
-		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-		     			osDelay(100);
+		     			htim1.Instance->CCR4=75;
+
+
 		     			break;
 		     case 20 :
 		    	 	 	htim1.Instance->CCR4=75;
@@ -808,7 +808,7 @@ void rightmotor(void *argument)
 			  		  	  HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
 			  		  	  HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
 			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 400);
-			  	  		  osDelay(dist*46);
+			  	  		  osDelay(dist*48);
 
 			  	  		  htim1.Instance->CCR4=75;
 			  	  		  break;
@@ -818,12 +818,9 @@ void rightmotor(void *argument)
 			  		  	  HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
 			  		  	  HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
 			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 1500);
-			  	  		  osDelay(dist*41);
-			  	  		  htim1.Instance->CCR4=85;
-			  	  	      __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-			  	  		  osDelay(100);
-
-
+			  	  		  osDelay(dist*48);
+			  	  		htim1.Instance->CCR4=75;
+			  	  		o
 			  	  		  break;
 			  case 0  :
 				  	  	  htim1.Instance->CCR4=75;
@@ -873,7 +870,7 @@ void leftmotor(void *argument)
 	    		 	 	 HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
 	    		  		 HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 1500);
-	    		  		 dist=dist*47;
+	    		  		 dist=dist*48;
 	    		  		 osDelay(dist);
 
 	    		  		 break;
@@ -882,11 +879,8 @@ void leftmotor(void *argument)
 	    		 	 	 HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
 	    		  		 HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 400);
-	    		  		 dist=dist*40;
+	    		  		 dist=dist*48;
 	    		  		 osDelay(dist);
-	    		  		 htim1.Instance->CCR4=85;
-	    		  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-	    		  	     osDelay(100);
 
 	    		  		 break;
 	  	  	  	case 20  :
@@ -901,7 +895,7 @@ void leftmotor(void *argument)
 		  		  	  	  HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_RESET);
 		  		  	  	  HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_SET);
 		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 1500);
-		  		  	  	  osDelay(dist*47);
+		  		  	  	  osDelay(dist*48);
 
 		  		  	  	  break;
 	  	  	  	case 22  :
@@ -909,10 +903,7 @@ void leftmotor(void *argument)
 		  		  	  	  HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_RESET);
 		  		  	  	  HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_SET);
 		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 400);
-		  		  	  	  osDelay(dist*40);
-		  		  	      htim1.Instance->CCR4=85;
-		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-		  		  	  	  osDelay(100);
+		  		  	  	  osDelay(dist*48);
 
 		  		  	  	  break;
 	  	  	  	case 0  :
