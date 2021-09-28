@@ -718,7 +718,6 @@ void StartDefaultTask(void *argument)
 
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 	uint8_t ch='A';
-	sprintf(value,"%s\0","00000");
   for(;;)
   {	/*
 	  htim1.Instance->CCR4=85;//right
@@ -852,17 +851,21 @@ void rightmotor(void *argument)
 		    	 	 	{	sprintf(home,"%s\0","READY");
 		    	 	 		HAL_UART_Transmit(&huart3, (uint8_t *)home,5,0xFFFF);
 		    	 	 		flag=0;
-		    	 	 		sprintf(aRxBuffer,"%s\0","00000");
 		    	 	 	}
-
 
 		    	 	 	break;
 
 
 		     default :
+
 		    	 	 	  htim1.Instance->CCR4=75;
 		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-		    	 	 	sprintf(aRxBuffer,"%s\0","00000");
+		    	 	 	if(flag==1)
+		    	 	 	{
+		    	 	 		sprintf(home,"%s\0","READY");
+							HAL_UART_Transmit(&huart3, (uint8_t *)home,5,0xFFFF);
+							flag=0;
+		    	 	 	}
 		    	 	 	break;
 		  }
 

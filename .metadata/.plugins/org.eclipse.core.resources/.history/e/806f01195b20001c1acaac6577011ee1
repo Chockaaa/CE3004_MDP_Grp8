@@ -718,7 +718,6 @@ void StartDefaultTask(void *argument)
 
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 	uint8_t ch='A';
-	sprintf(value,"%s\0","00000");
   for(;;)
   {	/*
 	  htim1.Instance->CCR4=85;//right
@@ -774,8 +773,6 @@ void rightmotor(void *argument)
 				  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
 				  		dist=dist*909;
 				  		osDelay(dist);
-				  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-				  		osDelay(200);
 				  		flag=1;
 				  		break;
 
@@ -789,7 +786,6 @@ void rightmotor(void *argument)
 		     			osDelay(dist); //+3
 		     			htim1.Instance->CCR4=75;
 		     			flag=1;
-
 		     			break;
 
 		     case 12  :
@@ -817,8 +813,6 @@ void rightmotor(void *argument)
 			  	  		dist=dist*900;
 			  	  		osDelay(dist);
 			  	  		flag=1;
-			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-			  	  		osDelay(200);
 			  	  		break;
 
 		     case 21 :
@@ -852,17 +846,21 @@ void rightmotor(void *argument)
 		    	 	 	{	sprintf(home,"%s\0","READY");
 		    	 	 		HAL_UART_Transmit(&huart3, (uint8_t *)home,5,0xFFFF);
 		    	 	 		flag=0;
-		    	 	 		sprintf(aRxBuffer,"%s\0","00000");
 		    	 	 	}
-
 
 		    	 	 	break;
 
 
 		     default :
+
 		    	 	 	  htim1.Instance->CCR4=75;
 		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-		    	 	 	sprintf(aRxBuffer,"%s\0","00000");
+		    	 	 	if(flag==1)
+		    	 	 	{
+		    	 	 		sprintf(home,"%s\0","READY");
+							HAL_UART_Transmit(&huart3, (uint8_t *)home,5,0xFFFF);
+							flag=0;
+		    	 	 	}
 		    	 	 	break;
 		  }
 
@@ -898,8 +896,6 @@ void leftmotor(void *argument)
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
 	    		  		 dist=dist*909;
 	    		  		 osDelay(dist);
-	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
-	    		  		 osDelay(200);
 	    		  		 break;
 	  	  	  	case 11 :
 	  	  	  			 osDelay(100);
@@ -918,7 +914,7 @@ void leftmotor(void *argument)
 	    		  		 dist=dist*40;
 	    		  		 osDelay(dist);
 	    		  		 htim1.Instance->CCR4=85;
-	    		  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
+	    		  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
 	    		  	     osDelay(100);
 
 	    		  		 break;
@@ -928,8 +924,6 @@ void leftmotor(void *argument)
 		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
 		  		  	  	  dist=dist*900;
 		  		  	  	  osDelay(dist);
-		  		  	      __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
-		  		  	  	  osDelay(200);
 		  		  	  	  break;
 	  	  	  	case 21  :
 	  	  	  				osDelay(100);
@@ -946,7 +940,7 @@ void leftmotor(void *argument)
 		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 400);
 		  		  	  	  osDelay(dist*40);
 		  		  	      htim1.Instance->CCR4=85;
-		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
 		  		  	  	  osDelay(100);
 
 		  		  	  	  break;

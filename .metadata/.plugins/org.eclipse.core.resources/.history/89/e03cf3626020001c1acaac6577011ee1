@@ -852,9 +852,7 @@ void rightmotor(void *argument)
 		    	 	 	{	sprintf(home,"%s\0","READY");
 		    	 	 		HAL_UART_Transmit(&huart3, (uint8_t *)home,5,0xFFFF);
 		    	 	 		flag=0;
-		    	 	 		sprintf(aRxBuffer,"%s\0","00000");
 		    	 	 	}
-
 
 		    	 	 	break;
 
@@ -862,7 +860,6 @@ void rightmotor(void *argument)
 		     default :
 		    	 	 	  htim1.Instance->CCR4=75;
 		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-		    	 	 	sprintf(aRxBuffer,"%s\0","00000");
 		    	 	 	break;
 		  }
 
