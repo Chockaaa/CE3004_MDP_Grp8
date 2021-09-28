@@ -107,7 +107,8 @@ void sensor(void *argument);
 uint8_t aRxBuffer[5];
 uint8_t value[5];
 /* USER CODE END 0 */
-uint8_t home[5]="done1";
+uint8_t home[5];
+
 /**
   * @brief  The application entry point.
   * @retval int
@@ -717,6 +718,7 @@ void StartDefaultTask(void *argument)
 
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 	uint8_t ch='A';
+	sprintf(value,"%s\0","00000");
   for(;;)
   {	/*
 	  htim1.Instance->CCR4=85;//right
@@ -735,7 +737,8 @@ void StartDefaultTask(void *argument)
 	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 	OLED_Refresh_Gram();
 	osDelay(500);
-    //HAL_UART_Transmit(&huart3,(uint8_t *)&value,5,0xFFFF);
+
+
   }
   /* USER CODE END 5 */
 }
@@ -754,22 +757,28 @@ void rightmotor(void *argument)
 	uint16_t pwmVal=1000;
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_4);
 	int x;
+	uint8_t flag=1;
 	uint32_t dist=0;
 	  for(;;)
 	  {
+
+
 		  x=atoi(value);
 		  dist = (uint32_t)(x%1000); //Get last 2 Digit
 		  x/=1000;
 		  switch(x) {
 		     case 10  :
-		    	 	 	  htim1.Instance->CCR4=75;
-				  		  HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
-				  		  HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
-				  		  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
-				  		  dist=dist*909;
-				  		  osDelay(dist);
-				  		 HAL_UART_Transmit(&huart3,(uint8_t *)&home,5,0xFFFF);
-				  		  break;
+		    	 	 	htim1.Instance->CCR4=75;
+				  		HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
+				  		HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
+				  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
+				  		dist=dist*909;
+				  		osDelay(dist);
+				  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
+				  		osDelay(200);
+				  		flag=1;
+				  		break;
+
 		     case 11  :
 		    	 	 	htim1.Instance->CCR4=93;
 		    	 	 	osDelay(100);
@@ -778,12 +787,13 @@ void rightmotor(void *argument)
 		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 400);
 		     			dist=(dist*46);
 		     			osDelay(dist); //+3
-
 		     			htim1.Instance->CCR4=75;
-		     			 HAL_UART_Transmit(&huart3,(uint8_t *)&home,5,0xFFFF);
+		     			flag=1;
 
 		     			break;
+
 		     case 12  :
+
 		    	 	 	htim1.Instance->CCR4=58;
 		    	 	 	osDelay(100);
 		     			HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
@@ -794,54 +804,67 @@ void rightmotor(void *argument)
 		     			htim1.Instance->CCR4=85;
 		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
 		     			osDelay(100);
-		     			 HAL_UART_Transmit(&huart3,(uint8_t *)&home,5,0xFFFF);
+		     			flag=1;
 		     			break;
-		     case 20 :
-		    	 	 	htim1.Instance->CCR4=75;
 
+		     case 20 :
+
+
+		    	 	 	htim1.Instance->CCR4=75;
 			  		  	HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
 			  		  	HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
 			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
 			  	  		dist=dist*900;
 			  	  		osDelay(dist);
-			  	  	 HAL_UART_Transmit(&huart3,(uint8_t *)&home,5,0xFFFF);
+			  	  		flag=1;
+			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
+			  	  		osDelay(200);
 			  	  		break;
+
 		     case 21 :
-		    	 	 	  htim1.Instance->CCR4=93;
-		    	 	 	  osDelay(100);
-			  		  	  HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
-			  		  	  HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
+		    	 	 	htim1.Instance->CCR4=93;
+		    	 	 	osDelay(100);
+			  		  	HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
+			  		  	HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
 			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 400);
-			  	  		  osDelay(dist*46);
+			  	  		osDelay(dist*46);
+			  	  		htim1.Instance->CCR4=75;
+			  	  		flag=1;
+			  	  		break;
 
-			  	  		  htim1.Instance->CCR4=75;
-			  	  		 HAL_UART_Transmit(&huart3,(uint8_t *)&home,5,0xFFFF);
-			  	  		  break;
 		     case 22 :
-		    	 	 	  htim1.Instance->CCR4=58;
-		    	 	 	  osDelay(100);
-			  		  	  HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
-			  		  	  HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
+		    	 	 	htim1.Instance->CCR4=58;
+		    	 	 	osDelay(100);
+			  		  	HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_RESET);
+			  		  	HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_SET);
 			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 1500);
-			  	  		  osDelay(dist*41);
-			  	  		  htim1.Instance->CCR4=85;
-			  	  	      __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-			  	  		  osDelay(100);
+			  	  		osDelay(dist*41);
+			  	  		htim1.Instance->CCR4=85;
+			  	  	    __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
+			  	  		osDelay(100);
+			  	  		flag=1;
+			  	  		break;
 
-
-			  	  		  break;
 			  case 0  :
 				  	  	  htim1.Instance->CCR4=75;
 		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-		    	 	 	HAL_UART_Transmit(&huart3,(uint8_t *)&home,5,0xFFFF);
+		    	 	 	if(flag==1)
+		    	 	 	{	sprintf(home,"%s\0","READY");
+		    	 	 		HAL_UART_Transmit(&huart3, (uint8_t *)home,5,0xFFFF);
+		    	 	 		flag=0;
+		    	 	 		sprintf(aRxBuffer,"%s\0","00000");
+		    	 	 	}
+
+
 		    	 	 	break;
+
+
 		     default :
 		    	 	 	  htim1.Instance->CCR4=75;
 		    	 	 	__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
-		    	 	 	HAL_UART_Transmit(&huart3,(uint8_t *)&home,5,0xFFFF);
+		    	 	 	sprintf(aRxBuffer,"%s\0","00000");
 		    	 	 	break;
 		  }
-
 
 
 	  }
@@ -875,6 +898,8 @@ void leftmotor(void *argument)
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
 	    		  		 dist=dist*909;
 	    		  		 osDelay(dist);
+	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
+	    		  		 osDelay(200);
 	    		  		 break;
 	  	  	  	case 11 :
 	  	  	  			 osDelay(100);
@@ -893,7 +918,7 @@ void leftmotor(void *argument)
 	    		  		 dist=dist*40;
 	    		  		 osDelay(dist);
 	    		  		 htim1.Instance->CCR4=85;
-	    		  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
+	    		  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
 	    		  	     osDelay(100);
 
 	    		  		 break;
@@ -903,6 +928,8 @@ void leftmotor(void *argument)
 		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
 		  		  	  	  dist=dist*900;
 		  		  	  	  osDelay(dist);
+		  		  	      __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
+		  		  	  	  osDelay(200);
 		  		  	  	  break;
 	  	  	  	case 21  :
 	  	  	  				osDelay(100);
@@ -919,15 +946,17 @@ void leftmotor(void *argument)
 		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 400);
 		  		  	  	  osDelay(dist*40);
 		  		  	      htim1.Instance->CCR4=85;
-		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
+		  		  	  	  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
 		  		  	  	  osDelay(100);
 
 		  		  	  	  break;
 	  	  	  	case 0  :
 	  	  	  			  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
+
 	  	  			      break;
 	     default :
 						  __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
+
 						  break;
 	  }
   }
@@ -961,6 +990,7 @@ void sensor(void *argument)
 		tick=HAL_GetTick();
   for(;;)
   {
+
 	  	  if(HAL_GetTick()-tick>100L){
 	  		  		cnt2=__HAL_TIM_GET_COUNTER(&htim5);
 	  		  		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5)){

@@ -852,7 +852,9 @@ void rightmotor(void *argument)
 		    	 	 	{	sprintf(home,"%s\0","READY");
 		    	 	 		HAL_UART_Transmit(&huart3, (uint8_t *)home,5,0xFFFF);
 		    	 	 		flag=0;
+
 		    	 	 	}
+
 
 		    	 	 	break;
 
