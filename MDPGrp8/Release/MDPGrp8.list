@@ -183,7 +183,7 @@ Disassembly of section .text:
  8000368:	f44f 6296 	mov.w	r2, #1200	; 0x4b0
  800036c:	2600      	movs	r6, #0
  800036e:	6823      	ldr	r3, [r4, #0]
- 8000370:	f241 10c1 	movw	r0, #4545	; 0x11c1
+ 8000370:	f642 209c 	movw	r0, #10908	; 0x2a9c
  8000374:	63da      	str	r2, [r3, #60]	; 0x3c
  8000376:	f002 fc7b 	bl	8002c70 <osDelay>
  800037a:	6823      	ldr	r3, [r4, #0]
@@ -217,7 +217,7 @@ Disassembly of section .text:
  80003c6:	f44f 6296 	mov.w	r2, #1200	; 0x4b0
  80003ca:	2600      	movs	r6, #0
  80003cc:	6823      	ldr	r3, [r4, #0]
- 80003ce:	f241 10c1 	movw	r0, #4545	; 0x11c1
+ 80003ce:	f642 209c 	movw	r0, #10908	; 0x2a9c
  80003d2:	63da      	str	r2, [r3, #60]	; 0x3c
  80003d4:	f002 fc4c 	bl	8002c70 <osDelay>
  80003d8:	6823      	ldr	r3, [r4, #0]
@@ -311,8 +311,8 @@ Disassembly of section .text:
  80004b8:	20001bb1 	.word	0x20001bb1
  80004bc:	40011000 	.word	0x40011000
  80004c0:	40011800 	.word	0x40011800
- 80004c4:	0002fb6b 	.word	0x0002fb6b
- 80004c8:	0002c628 	.word	0x0002c628
+ 80004c4:	00072834 	.word	0x00072834
+ 80004c8:	0006a860 	.word	0x0006a860
  80004cc:	20001b14 	.word	0x20001b14
 
 080004d0 <rightmotor>:
@@ -379,7 +379,7 @@ Disassembly of section .text:
  8000584:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
  8000588:	2600      	movs	r6, #0
  800058a:	6823      	ldr	r3, [r4, #0]
- 800058c:	f241 10c1 	movw	r0, #4545	; 0x11c1
+ 800058c:	f642 209c 	movw	r0, #10908	; 0x2a9c
  8000590:	63da      	str	r2, [r3, #60]	; 0x3c
  8000592:	f002 fb6d 	bl	8002c70 <osDelay>
  8000596:	6823      	ldr	r3, [r4, #0]
@@ -420,7 +420,7 @@ Disassembly of section .text:
  80005f2:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
  80005f6:	2600      	movs	r6, #0
  80005f8:	6823      	ldr	r3, [r4, #0]
- 80005fa:	f241 10c1 	movw	r0, #4545	; 0x11c1
+ 80005fa:	f642 209c 	movw	r0, #10908	; 0x2a9c
  80005fe:	63da      	str	r2, [r3, #60]	; 0x3c
  8000600:	f002 fb36 	bl	8002c70 <osDelay>
  8000604:	6823      	ldr	r3, [r4, #0]
@@ -542,8 +542,8 @@ Disassembly of section .text:
  8000730:	20001b14 	.word	0x20001b14
  8000734:	40010c00 	.word	0x40010c00
  8000738:	40011800 	.word	0x40011800
- 800073c:	0002fb6b 	.word	0x0002fb6b
- 8000740:	0002d7e9 	.word	0x0002d7e9
+ 800073c:	00072834 	.word	0x00072834
+ 8000740:	0006d2fc 	.word	0x0006d2fc
  8000744:	08004f59 	.word	0x08004f59
  8000748:	08004f38 	.word	0x08004f38
  800074c:	20001bac 	.word	0x20001bac
