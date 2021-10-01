@@ -794,7 +794,7 @@ void rightmotor(void *argument)
 		     			HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
 		     			HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
 		     			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 400);
-		     			dist=(dist*43);
+		     			dist=(dist*45);
 		     			osDelay(dist); //+3
 		     			htim1.Instance->CCR4=75;
 		     			flag=1;
@@ -929,7 +929,7 @@ void leftmotor(void *argument)
 	    		 	 	 HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
 	    		  		 HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 1500);
-	    		  		 dist=dist*43;
+	    		  		 dist=dist*45;
 	    		  		 osDelay(dist);
 
 	    		  		 break;
