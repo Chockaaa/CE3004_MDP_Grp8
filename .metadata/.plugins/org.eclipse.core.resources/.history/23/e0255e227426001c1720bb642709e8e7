@@ -834,10 +834,6 @@ void rightmotor(void *argument)
 				  		osDelay(dist);
 				  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
 				  		osDelay(200);
-				  		if(dist==700)
-				  		{
-				  			osDelay(1000);
-				  		}
 				  		flag=1;
 				  		break;
 
@@ -894,10 +890,6 @@ void rightmotor(void *argument)
 			  	  		flag=1;
 			  	  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
 			  	  		osDelay(200);
-			  	  		if(dist==720)
-			  	  		{
-			  	  			osDelay(1000);
-			  	  		}
 			  	  		break;
 
 		     case 21 :
@@ -980,10 +972,6 @@ void leftmotor(void *argument)
 	    		  		 osDelay(dist);
 	    		  		 __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
 	    		  		 osDelay(200);
-	    		  		if(dist==700)
-	    		  		{
-	    		  			osDelay(1000);
-	    		  		}
 	    		  		 break;
 	  	  	  	case 11 :
 	  	  	  			 HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
@@ -1028,10 +1016,6 @@ void leftmotor(void *argument)
 		  		  	  	  osDelay(dist);
 		  		  	      __HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
 		  		  	  	  osDelay(200);
-		  		  	  	  if(dist==720)
-		  		  	  	  {
-		  		  	  		  osDelay(1000);
-		  		  	  	  }
 		  		  	  	  break;
 	  	  	  	case 21  :
 
@@ -1106,7 +1090,7 @@ void sensor(void *argument)
 		//sprintf(hello, "%5d\0", raw);
 		//osDelay(1000);
 		//OLED_ShowString(70,50,hello);
-	  	  if(HAL_GetTick()-tick>1000L){
+	  	  if(HAL_GetTick()-tick>100L){
 	  		  		cnt2=__HAL_TIM_GET_COUNTER(&htim5);
 	  		  		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5)){
 	  		  				if(cnt2<cnt1)
