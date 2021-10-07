@@ -897,6 +897,10 @@ void rightmotor(void *argument)
 				htim1.Instance->CCR4=60;
 				osDelay(500);
 				htim1.Instance->CCR4=77;*/
+				if(dist==1)
+				{
+				osDelay(1000);
+				}
 				flag=1;
 				break;
 
@@ -1065,7 +1069,7 @@ void rightmotor(void *argument)
 					HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
 					__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
 					tick=HAL_GetTick();
-					temp=tickbaseval*0.8;
+					temp=tickbaseval*0.9;
 					while(totaldist<temp)
 					{
 						if(HAL_GetTick()-tick>50L)
@@ -1116,7 +1120,7 @@ void rightmotor(void *argument)
 						HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
 						__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 1500);
 						tick=HAL_GetTick();
-						temp=tickbaseval*6.2;
+						temp=tickbaseval*5.2;//5.4
 						while(totaldist<temp)
 						{
 							if(HAL_GetTick()-tick>50L)
@@ -1210,6 +1214,10 @@ void rightmotor(void *argument)
 					htim1.Instance->CCR4=60;
 					osDelay(500);
 					htim1.Instance->CCR4=77;*/
+					if(dist==1)
+						{
+						osDelay(1000);
+						}
 					flag=1;
 					break;
 
@@ -1362,6 +1370,10 @@ void leftmotor(void *argument)
 						totaldist+=diff;
 	  		  		}
 				}
+				if(dist==1)
+				{
+					osDelay(1000);
+				}
 /*				osDelay(200);
 				osDelay(1000);*/
 
@@ -1421,7 +1433,7 @@ void leftmotor(void *argument)
 	  			  		HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
 	  			  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 1500);
 	  					tick=HAL_GetTick();
-	  					temp=tickbaseval*6.2;
+	  					temp=tickbaseval*6;//6 for scse lounge 6.2 for outside scse
 
 	  					while(totaldist<temp)
 	  					{
@@ -1478,7 +1490,7 @@ void leftmotor(void *argument)
 			  		HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
 			  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
 					tick=HAL_GetTick();
-					temp=tickbaseval*0.8;
+					temp=tickbaseval*0.9;
 					while(totaldist<temp)
 					{
 		  		  	  if(HAL_GetTick()-tick>50L){
@@ -1614,6 +1626,10 @@ void leftmotor(void *argument)
 					}
 /*					osDelay(200);
 					osDelay(1000);*/
+					if(dist==1)
+					{
+						osDelay(1000);
+					}
 		  		  	  	  break;
 	  	  	  	case 21  :
 

@@ -1,8 +1,8 @@
 main.c:769:6:StartDefaultTask	48	static
-main.c:1289:6:leftmotor	72	static
-main.c:1661:6:sensor	8	static
+main.c:1297:6:leftmotor	72	static
+main.c:1677:6:sensor	8	static
 main.c:809:6:rightmotor	72	static
 main.c:214:6:SystemClock_Config	96	static,ignoring_inline_asm
 main.c:119:5:main	112	static,ignoring_inline_asm
 main.c:754:6:HAL_UART_RxCpltCallback	0	static
-main.c:1747:6:Error_Handler	0	static,ignoring_inline_asm
+main.c:1763:6:Error_Handler	0	static,ignoring_inline_asm
