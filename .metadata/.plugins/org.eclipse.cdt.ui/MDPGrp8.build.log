@@ -1,4 +1,4 @@
-01:29:36 **** Incremental Build of configuration Release for project MDPGrp8 ****
+06:22:31 **** Incremental Build of configuration Release for project MDPGrp8 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'StartDefaultTask':
@@ -393,15 +393,15 @@ arm-none-eabi-objdump -h -S  MDPGrp8.elf  > "MDPGrp8.list"
 arm-none-eabi-objcopy  -O ihex  MDPGrp8.elf  "MDPGrp8.hex"
 arm-none-eabi-objcopy  -O binary  MDPGrp8.elf  "MDPGrp8.bin"
    text	   data	    bss	    dec	    hex	filename
-  26172	    124	   9676	  35972	   8c84	MDPGrp8.elf
+  26188	    124	   9676	  35988	   8c94	MDPGrp8.elf
 Finished building: default.size.stdout
  
-Finished building: MDPGrp8.hex
 Finished building: MDPGrp8.bin
+Finished building: MDPGrp8.hex
  
  
 Finished building: MDPGrp8.list
  
 
-01:29:38 Build Finished. 0 errors, 70 warnings. (took 1s.690ms)
+06:22:33 Build Finished. 0 errors, 70 warnings. (took 1s.820ms)
 
