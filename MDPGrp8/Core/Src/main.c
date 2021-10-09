@@ -1120,7 +1120,7 @@ void rightmotor(void *argument)
 						HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
 						__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 1500);
 						tick=HAL_GetTick();
-						temp=tickbaseval*5.3;//5.4 5.2 for scse lounge 5.3 corridor
+						temp=tickbaseval*5.35;//5.4 5.2 for scse lounge 5.3 corridor
 						while(totaldist<temp)
 						{
 							if(HAL_GetTick()-tick>50L)

@@ -1026,7 +1026,7 @@ Disassembly of section .text:
  8000bfc:	4602      	mov	r2, r0
  8000bfe:	f8df 9278 	ldr.w	r9, [pc, #632]	; 8000e78 <rightmotor+0x61c>
  8000c02:	f109 0b0f 	add.w	fp, r9, #15
- 8000c06:	f640 23c3 	movw	r3, #2755	; 0xac3
+ 8000c06:	f640 23dd 	movw	r3, #2781	; 0xadd
  8000c0a:	459a      	cmp	sl, r3
  8000c0c:	d951      	bls.n	8000cb2 <rightmotor+0x456>
  8000c0e:	2200      	movs	r2, #0
