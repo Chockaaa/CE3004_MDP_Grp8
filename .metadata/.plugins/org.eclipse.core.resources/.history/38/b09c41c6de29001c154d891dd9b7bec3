@@ -794,7 +794,7 @@ void StartDefaultTask(void *argument)
 	sprintf(temp,"%s\0",aRxBuffer);
 	if(temp=="54321")
 	{
-		OLED_ShowString(10,40,"Wk9 Task");
+
 	}
 	else
 	{

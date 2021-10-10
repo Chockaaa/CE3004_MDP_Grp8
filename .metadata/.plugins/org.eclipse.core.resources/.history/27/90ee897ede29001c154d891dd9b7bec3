@@ -775,9 +775,6 @@ void StartDefaultTask(void *argument)
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 	uint8_t ch='A';
 	sprintf(value,"%s\0","00000");
-
-
-	uint8_t temp[5];
   for(;;)
   {	/*
 	  htim1.Instance->CCR4=85;//right
@@ -791,19 +788,12 @@ void StartDefaultTask(void *argument)
 	*/
 	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,5);
 	OLED_ShowString(10,10,hello);
-	sprintf(temp,"%s\0",aRxBuffer);
-	if(temp=="54321")
-	{
-		OLED_ShowString(10,40,"Wk9 Task");
-	}
-	else
-	{
 	sprintf(value,"%s\0",aRxBuffer);
 	OLED_ShowString(10,40,value);
 	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 	OLED_Refresh_Gram();
 	osDelay(500);
-	}
+
 
   }
   /* USER CODE END 5 */
