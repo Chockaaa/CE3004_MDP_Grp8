@@ -114,7 +114,7 @@ uint8_t aRxBuffer[5];
 uint8_t value[5];
 uint8_t home[5];
 /* USER CODE END 0 */
-uint8_t stopwheel=0;
+
 /**
   * @brief  The application entry point.
   * @retval int
