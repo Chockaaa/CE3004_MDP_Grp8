@@ -12785,3 +12785,271 @@
 2021-10-10 23:24:14,056 [INFO] RtosManager:604 - Active RTOS found at IOC load: FREERTOS [Cortex-M3NS]
 2021-10-10 23:24:14,058 [INFO] OpenFileManager:333 - Restore cursor
 2021-10-10 23:24:43,750 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:15,966 [INFO] MainUpdater:2671 - connection check result : 10
+2021-10-10 23:31:15,967 [INFO] MainUpdater:2671 - connection check result : 10
+2021-10-10 23:31:16,122 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,122 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,123 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,123 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,123 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,123 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,123 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,124 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,124 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,124 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,131 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:16,169 [INFO] MicroXplorer:448 - Change Database Path : 
+2021-10-10 23:31:16,169 [INFO] MicroXplorer:478 - Change Database Version : DB.6.0.30
+2021-10-10 23:31:16,169 [WARN] ThirdParty:813 - waiting for thirdparty lock release [close project]
+2021-10-10 23:31:16,169 [INFO] ThirdParty:815 - entering critical section [close project]
+2021-10-10 23:31:16,169 [INFO] ThirdParty:825 - exiting critical section [close project]
+2021-10-10 23:31:16,170 [INFO] PinOutPanel:1463 - setPackage(No Configuration,No Configuration)
+2021-10-10 23:31:16,174 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 453083416 Bytes (866123776)
+2021-10-10 23:31:16,174 [INFO] MicroXplorer:448 - Change Database Path : 
+2021-10-10 23:31:16,174 [INFO] MicroXplorer:478 - Change Database Version : DB.6.0.30
+2021-10-10 23:31:16,174 [INFO] OpenFileManager:313 - Change cursor
+2021-10-10 23:31:16,928 [INFO] Context:592 - Trying to add GPIOservice into a context  which must be forbidden
+2021-10-10 23:31:17,124 [WARN] ApiManager:304 - Cannot register API 'Board Extension:S2868A1' from pack STMicroelectronics.X-CUBE-SFXS2LP1.3.1.0: no header file found
+2021-10-10 23:31:17,124 [WARN] ApiManager:304 - Cannot register API 'Board Extension:S2868A2' from pack STMicroelectronics.X-CUBE-SFXS2LP1.3.1.0: no header file found
+2021-10-10 23:31:17,125 [WARN] ApiManager:304 - Cannot register API 'Board Extension:S2915A1' from pack STMicroelectronics.X-CUBE-SFXS2LP1.3.1.0: no header file found
+2021-10-10 23:31:17,129 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,129 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,129 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,129 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,129 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,130 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,131 [WARN] ModelIntegratedComponent:60 - No mode defined for component null
+2021-10-10 23:31:17,275 [WARN] ApiManager:304 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.9.0.0: no header file found
+2021-10-10 23:31:17,275 [WARN] ApiManager:304 - Cannot register API 'Board Extension:IKS01A2' from pack STMicroelectronics.X-CUBE-MEMS1.9.0.0: no header file found
+2021-10-10 23:31:17,276 [WARN] ApiManager:304 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.9.0.0: no header file found
+2021-10-10 23:31:17,284 [WARN] ApiManager:304 - Cannot register API 'Board Extension:S2868A1' from pack STMicroelectronics.X-CUBE-SUBG2.4.2.0: no header file found
+2021-10-10 23:31:17,284 [WARN] ApiManager:304 - Cannot register API 'Board Extension:S2868A2' from pack STMicroelectronics.X-CUBE-SUBG2.4.2.0: no header file found
+2021-10-10 23:31:17,284 [WARN] ApiManager:304 - Cannot register API 'Board Extension:S2915A1' from pack STMicroelectronics.X-CUBE-SUBG2.4.2.0: no header file found
+2021-10-10 23:31:17,286 [INFO] RtosManager:484 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2021-10-10 23:31:17,286 [INFO] RtosManager:484 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2021-10-10 23:31:17,286 [INFO] RtosManager:484 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2021-10-10 23:31:17,286 [INFO] RtosManager:484 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2021-10-10 23:31:17,286 [WARN] ModelIntegratedComponent:181 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2021-10-10 23:31:17,289 [WARN] ApiManager:304 - Cannot register API 'Board Extension:EEPRMA1' from pack STMicroelectronics.X-CUBE-EEPRMA1.3.1.0: no header file found
+2021-10-10 23:31:17,289 [WARN] ApiManager:304 - Cannot register API 'Board Extension:EEPRMA2' from pack STMicroelectronics.X-CUBE-EEPRMA1.3.1.0: no header file found
+2021-10-10 23:31:17,289 [WARN] ApiManager:304 - Cannot register API 'Board Extension:GNSS1A1' from pack STMicroelectronics.X-CUBE-GNSS1.5.2.0: no header file found
+2021-10-10 23:31:17,290 [WARN] ApiManager:304 - Cannot register API 'Board Support:Custom' from pack STMicroelectronics.X-CUBE-GNSS1.5.2.0: no header file found
+2021-10-10 23:31:17,290 [WARN] ApiManager:304 - Cannot register API 'Data Exchange:lib_gnss' from pack STMicroelectronics.X-CUBE-GNSS1.5.2.0: no header file found
+2021-10-10 23:31:17,290 [WARN] ApiManager:304 - Cannot register API 'Wireless:BlueNRG-MS' from pack STMicroelectronics.X-CUBE-BLE1.6.2.1: no header file found
+2021-10-10 23:31:17,290 [WARN] ApiManager:304 - Cannot register API 'Wireless:BlueNRG-2' from pack STMicroelectronics.X-CUBE-BLE2.3.2.1: no header file found
+2021-10-10 23:31:17,291 [WARN] ApiManager:304 - Cannot register API 'Board Extension:NFC04A1' from pack STMicroelectronics.X-CUBE-NFC4.2.0.3: no header file found
+2021-10-10 23:31:17,945 [INFO] RtosManager:791 - Current active RTOS is FREERTOS [Cortex-M3NS]
+2021-10-10 23:31:17,949 [INFO] ImportTextPane:167 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2021-10-10 23:31:18,097 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 692257008 Bytes (866123776)
+2021-10-10 23:31:18,098 [WARN] ThirdParty:779 - waiting for thirdparty lock release [change project]
+2021-10-10 23:31:18,098 [INFO] ThirdParty:781 - entering critical section [change project]
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 3.1.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :RoweBots I-CUBE-UNISONRTOS 5.5.0-4
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 2.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 1.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 2.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 9.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 1.1.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 4.2.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.1
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 7.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.2.1
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 1.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.2.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 3.1.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 5.2.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 6.2.1
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.2.1
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 2.0.3
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 4.8.0
+2021-10-10 23:31:18,098 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.17.0
+2021-10-10 23:31:18,099 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2021-10-10 23:31:18,099 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2021-10-10 23:31:18,099 [INFO] ThirdParty:967 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2021-10-10 23:31:18,099 [INFO] ThirdParty:787 - exiting critical section [change project]
+2021-10-10 23:31:18,233 [INFO] PinOutPanel:1463 - setPackage(No Configuration,No Configuration)
+2021-10-10 23:31:18,234 [INFO] PinOutPanel:1463 - setPackage(STM32F103VETx,LQFP100)
+2021-10-10 23:31:18,472 [INFO] UtilMem:74 - Before build in PCC Used Memory: 349434760 Bytes (866123776)
+2021-10-10 23:31:18,658 [INFO] UtilMem:74 - After build in PCC Used Memory: 419689352 Bytes (866123776)
+2021-10-10 23:31:18,686 [INFO] ApiDbMcu:468 - Load IP Config File for FREERTOS
+2021-10-10 23:31:18,709 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,709 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,709 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,710 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,710 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,710 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,710 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,710 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,710 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,710 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,711 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,711 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,711 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,711 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,711 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,711 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,712 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,712 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,713 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,713 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,713 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,713 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,714 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,714 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,714 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,715 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,715 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,715 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,716 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,716 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,717 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,717 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,717 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,718 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,718 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,719 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,719 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,720 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,720 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,721 [INFO] IPUIPlugin:74 - create IPUIPlugin
+2021-10-10 23:31:18,731 [WARN] FreeRTOS:999 - Null or empty value: should not occur! (nothing added to the table)
+2021-10-10 23:31:18,739 [INFO] RtosManager:604 - Active RTOS found at IOC load: FREERTOS [Cortex-M3NS]
+2021-10-10 23:31:18,740 [INFO] OpenFileManager:333 - Restore cursor
+2021-10-10 23:31:30,049 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:32,637 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,952 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,953 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,953 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,953 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,953 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,953 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,953 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,953 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,954 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,954 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:31:42,959 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,379 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,379 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,379 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,379 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,379 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,379 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,380 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,380 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,380 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,380 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:03,385 [INFO] ADCParametersView:103 -                Rank 1 : false
+2021-10-10 23:32:07,572 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 484259760 Bytes (866123776)
+2021-10-10 23:32:08,774 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 504182704 Bytes (866123776)
+2021-10-10 23:32:11,296 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 543506352 Bytes (866123776)
+2021-10-10 23:32:13,367 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: FREERTOS
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: USART
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8F1
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: ADC
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2021-10-10 23:32:13,368 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2021-10-10 23:32:13,369 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: ADC
+2021-10-10 23:32:13,369 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2021-10-10 23:32:13,370 [INFO] CodeGenerator:663 - code generatio: config db path: C:\ST\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2021-10-10 23:32:14,137 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\license.tmp_save
+2021-10-10 23:32:14,406 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\license.tmp
+2021-10-10 23:32:14,510 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\gpio.tmp_save
+2021-10-10 23:32:14,592 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\gpio.tmp
+2021-10-10 23:32:15,358 [INFO] Middleware:1388 - No code input for Bsp Dependency
+2021-10-10 23:32:15,366 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_inc.tmp_save
+2021-10-10 23:32:15,419 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_inc.tmp
+2021-10-10 23:32:15,423 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_kernelInit.tmp_save
+2021-10-10 23:32:15,479 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_kernelInit.tmp
+2021-10-10 23:32:15,483 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_kernelStart.tmp_save
+2021-10-10 23:32:15,537 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_kernelStart.tmp
+2021-10-10 23:32:15,541 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_typedefs.tmp_save
+2021-10-10 23:32:15,598 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_typedefs.tmp
+2021-10-10 23:32:15,602 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_vars.tmp_save
+2021-10-10 23:32:15,659 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_vars.tmp
+2021-10-10 23:32:15,663 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_pfp.tmp_save
+2021-10-10 23:32:15,715 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_pfp.tmp
+2021-10-10 23:32:15,719 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_obj_creat.tmp_save
+2021-10-10 23:32:15,776 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_obj_creat.tmp
+2021-10-10 23:32:15,780 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_default_thread.tmp_save
+2021-10-10 23:32:15,832 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_default_thread.tmp
+2021-10-10 23:32:15,836 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_threads.tmp_save
+2021-10-10 23:32:15,889 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\rtos_threads.tmp
+2021-10-10 23:32:15,895 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Inc\FreeRTOSConfig.h_save
+2021-10-10 23:32:15,976 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Inc\FreeRTOSConfig.h
+2021-10-10 23:32:15,985 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Src\freertos.c_save
+2021-10-10 23:32:16,069 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Src\freertos.c
+2021-10-10 23:32:16,092 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Src\stm32f1xx_it.c_save
+2021-10-10 23:32:16,217 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Src\stm32f1xx_it.c
+2021-10-10 23:32:16,228 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Inc\stm32f1xx_it.h_save
+2021-10-10 23:32:16,294 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Inc\stm32f1xx_it.h
+2021-10-10 23:32:16,312 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Src\stm32f1xx_hal_msp.c_save
+2021-10-10 23:32:16,483 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Src\stm32f1xx_hal_msp.c
+2021-10-10 23:32:16,490 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\system.tmp_save
+2021-10-10 23:32:16,545 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\MXTmpFiles\system.tmp
+2021-10-10 23:32:16,555 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Inc\stm32f1xx_hal_conf.h_save
+2021-10-10 23:32:16,629 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Inc\stm32f1xx_hal_conf.h
+2021-10-10 23:32:16,655 [WARN] IPConfigManager:3148 - IP not found : TIM
+2021-10-10 23:32:16,659 [WARN] CodeGenerator:3268 - IP not found : null
+2021-10-10 23:32:16,667 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Inc\main.h_save
+2021-10-10 23:32:16,739 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Inc\main.h
+2021-10-10 23:32:16,748 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Src\main.c_save
+2021-10-10 23:32:17,000 [INFO] CodeEngine:257 - Generated code: C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\Core\Src\main.c
+2021-10-10 23:32:17,803 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 178mS.
+2021-10-10 23:32:17,811 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2021-10-10 23:32:18,261 [INFO] ConfigFileManager:1271 - The Die is : DIE414
+2021-10-10 23:32:18,272 [INFO] ApiDbMcu:468 - Load IP Config File for FATFS
+2021-10-10 23:32:18,293 [INFO] ApiDbMcu:468 - Load IP Config File for USB_DEVICE
+2021-10-10 23:32:20,057 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 2246mS.
+2021-10-10 23:32:20,058 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-10-10 23:32:20,066 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2021-10-11 10:17:20,627 [INFO] Activator:177 - 
+
+
+2021-10-11 10:17:20,629 [INFO] Activator:178 - !SESSION log4j initialized
+2021-10-11 12:21:32,617 [INFO] Activator:177 - 
+
+
+2021-10-11 12:21:32,622 [INFO] Activator:178 - !SESSION log4j initialized

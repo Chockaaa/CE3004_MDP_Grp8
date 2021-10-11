@@ -1,10 +1,419 @@
-08:46:53 **** Incremental Build of configuration Release for project MDPGrp8 ****
+12:27:24 **** Incremental Build of configuration Release for project MDPGrp8 ****
 make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I"C:/Users/CHOCKALINGAM KASI/STM32CubeIDE/workspace_1.7.0/CE3004_MDP_Grp8_Hardware/MDPGrp8/PeripheralDrivers/Inc" -I.../PeripheralDrivers/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:827:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  827 |  sprintf(value,"%s\0","00000");
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:827:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  827 |  sprintf(value,"%s\0","00000");
+      |                   ^~
+../Core/Src/main.c:844:10: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  844 |  sprintf(value,"%s\0",aRxBuffer);
+      |          ^~~~~
+      |          |
+      |          uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:844:19: warning: embedded '\0' in format [-Wformat-contains-nul]
+  844 |  sprintf(value,"%s\0",aRxBuffer);
+      |                   ^~
+../Core/Src/main.c:830:10: warning: unused variable 'temp' [-Wunused-variable]
+  830 |  uint8_t temp[5];
+      |          ^~~~
+../Core/Src/main.c:828:6: warning: unused variable 'wk9task' [-Wunused-variable]
+  828 |  int wk9task=0;
+      |      ^~~~~~~
+../Core/Src/main.c:826:10: warning: unused variable 'ch' [-Wunused-variable]
+  826 |  uint8_t ch='A';
+      |          ^~
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:886:5: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  886 |   x=atoi(value);
+      |     ^~~~
+../Core/Src/main.c:952:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  952 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:952:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+  952 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:955:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  955 |       sprintf(hello, "RD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:955:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+  955 |       sprintf(hello, "RD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:1047:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1047 |        sprintf(hello, "S:%5d\0", diff);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1047:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1047 |        sprintf(hello, "S:%5d\0", diff);
+      |                             ^~
+../Core/Src/main.c:1050:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1050 |        sprintf(hello, "RD:%2d\0", dir);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1050:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1050 |        sprintf(hello, "RD:%2d\0", dir);
+      |                              ^~
+../Core/Src/main.c:1093:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1093 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1093:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1093 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:1096:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1096 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1096:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1096 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c:1163:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1163 |        sprintf(hello, "S:%5d\0", diff);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1163:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1163 |        sprintf(hello, "S:%5d\0", diff);
+      |                             ^~
+../Core/Src/main.c:1166:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1166 |        sprintf(hello, "RD:%2d\0", dir);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1166:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1166 |        sprintf(hello, "RD:%2d\0", dir);
+      |                              ^~
+../Core/Src/main.c:1214:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1214 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1214:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1214 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:1217:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1217 |         sprintf(hello, "RD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1217:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1217 |         sprintf(hello, "RD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c:1269:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1269 |        sprintf(hello, "S:%5d\0", diff);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1269:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1269 |        sprintf(hello, "S:%5d\0", diff);
+      |                             ^~
+../Core/Src/main.c:1272:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1272 |        sprintf(hello, "RD:%2d\0", dir);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1272:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1272 |        sprintf(hello, "RD:%2d\0", dir);
+      |                              ^~
+../Core/Src/main.c:1341:21: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1341 |             sprintf(home,"%s\0","READY");
+      |                     ^~~~
+      |                     |
+      |                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1341:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1341 |             sprintf(home,"%s\0","READY");
+      |                             ^~
+../Core/Src/main.c:871:11: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+  871 |  uint32_t val=0;
+      |           ^~~
+../Core/Src/main.c: In function 'leftmotor':
+../Core/Src/main.c:1449:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1449 |       sprintf(hello, "S:%5d\0", diff);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1449:28: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1449 |       sprintf(hello, "S:%5d\0", diff);
+      |                            ^~
+../Core/Src/main.c:1452:15: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1452 |       sprintf(hello, "LD:%2d\0", dir);
+      |               ^~~~~
+      |               |
+      |               uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1452:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1452 |       sprintf(hello, "LD:%2d\0", dir);
+      |                             ^~
+../Core/Src/main.c:1499:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1499 |        sprintf(hello, "S:%5d\0", diff);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1499:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1499 |        sprintf(hello, "S:%5d\0", diff);
+      |                             ^~
+../Core/Src/main.c:1502:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1502 |        sprintf(hello, "LD:%2d\0", dir);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1502:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1502 |        sprintf(hello, "LD:%2d\0", dir);
+      |                              ^~
+../Core/Src/main.c:1542:19: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1542 |           sprintf(hello, "S:%5d\0", diff);
+      |                   ^~~~~
+      |                   |
+      |                   uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1542:32: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1542 |           sprintf(hello, "S:%5d\0", diff);
+      |                                ^~
+../Core/Src/main.c:1545:19: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1545 |           sprintf(hello, "LD:%2d\0", dir);
+      |                   ^~~~~
+      |                   |
+      |                   uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1545:33: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1545 |           sprintf(hello, "LD:%2d\0", dir);
+      |                                 ^~
+../Core/Src/main.c:1598:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1598 |        sprintf(hello, "S:%5d\0", diff);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1598:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1598 |        sprintf(hello, "S:%5d\0", diff);
+      |                             ^~
+../Core/Src/main.c:1601:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1601 |        sprintf(hello, "LD:%2d\0", dir);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1601:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1601 |        sprintf(hello, "LD:%2d\0", dir);
+      |                              ^~
+../Core/Src/main.c:1641:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1641 |         sprintf(hello, "S:%5d\0", diff);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1641:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1641 |         sprintf(hello, "S:%5d\0", diff);
+      |                              ^~
+../Core/Src/main.c:1644:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1644 |         sprintf(hello, "LD:%2d\0", dir);
+      |                 ^~~~~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1644:31: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1644 |         sprintf(hello, "LD:%2d\0", dir);
+      |                               ^~
+../Core/Src/main.c:1703:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1703 |        sprintf(hello, "S:%5d\0", diff);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1703:29: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1703 |        sprintf(hello, "S:%5d\0", diff);
+      |                             ^~
+../Core/Src/main.c:1706:16: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1706 |        sprintf(hello, "LD:%2d\0", dir);
+      |                ^~~~~
+      |                |
+      |                uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1706:30: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1706 |        sprintf(hello, "LD:%2d\0", dir);
+      |                              ^~
+../Core/Src/main.c:1373:11: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+ 1373 |  uint32_t val=0;
+      |           ^~~
+../Core/Src/main.c: In function 'sensor':
+../Core/Src/main.c:1791:11: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+ 1791 |   sprintf(hello, "%5d\0", sensordist);
+      |           ^~~~~
+      |           |
+      |           uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+c:\st\stm32cubeide_1.7.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\include\stdio.h:244:14: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |              ^
+../Core/Src/main.c:1791:22: warning: embedded '\0' in format [-Wformat-contains-nul]
+ 1791 |   sprintf(hello, "%5d\0", sensordist);
+      |                      ^~
+../Core/Src/main.c:1780:12: warning: unused variable 'dir3' [-Wunused-variable]
+ 1780 |   uint16_t dir3;
+      |            ^~~~
+../Core/Src/main.c:1779:12: warning: unused variable 'cnt4' [-Wunused-variable]
+ 1779 |   int cnt3,cnt4;
+      |            ^~~~
+../Core/Src/main.c:1779:7: warning: variable 'cnt3' set but not used [-Wunused-but-set-variable]
+ 1779 |   int cnt3,cnt4;
+      |       ^~~~
+../Core/Src/main.c:1772:12: warning: unused variable 'dir' [-Wunused-variable]
+ 1772 |   uint16_t dir;
+      |            ^~~
+../Core/Src/main.c:1771:12: warning: variable 'tick' set but not used [-Wunused-but-set-variable]
+ 1771 |   uint32_t tick;
+      |            ^~~~
+../Core/Src/main.c:1770:17: warning: unused variable 'diff' [-Wunused-variable]
+ 1770 |   int cnt1,cnt2,diff;
+      |                 ^~~~
+../Core/Src/main.c:1770:12: warning: unused variable 'cnt2' [-Wunused-variable]
+ 1770 |   int cnt1,cnt2,diff;
+      |            ^~~~
+../Core/Src/main.c:1770:7: warning: variable 'cnt1' set but not used [-Wunused-but-set-variable]
+ 1770 |   int cnt1,cnt2,diff;
+      |       ^~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:827:19: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+  827 |  sprintf(value,"%s\0","00000");
+      |                   ^~
+../Core/Src/main.c:827:2: note: 'sprintf' output 6 bytes into a destination of size 5
+  827 |  sprintf(value,"%s\0","00000");
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'rightmotor':
+../Core/Src/main.c:1341:29: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+ 1341 |             sprintf(home,"%s\0","READY");
+      |                             ^~
+../Core/Src/main.c:1341:13: note: 'sprintf' output 6 bytes into a destination of size 5
+ 1341 |             sprintf(home,"%s\0","READY");
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "MDPGrp8.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\CHOCKALINGAM KASI\STM32CubeIDE\workspace_1.7.0\CE3004_MDP_Grp8_Hardware\MDPGrp8\STM32F103VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MDPGrp8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MDPGrp8.elf
+ 
 arm-none-eabi-size   MDPGrp8.elf 
+arm-none-eabi-objdump -h -S  MDPGrp8.elf  > "MDPGrp8.list"
+arm-none-eabi-objcopy  -O ihex  MDPGrp8.elf  "MDPGrp8.hex"
    text	   data	    bss	    dec	    hex	filename
-  26188	    124	   9676	  35988	   8c94	MDPGrp8.elf
+  27504	    124	   9732	  37360	   91f0	MDPGrp8.elf
+arm-none-eabi-objcopy  -O binary  MDPGrp8.elf  "MDPGrp8.bin"
 Finished building: default.size.stdout
  
+Finished building: MDPGrp8.hex
+Finished building: MDPGrp8.bin
+Finished building: MDPGrp8.list
+ 
+ 
+ 
 
-08:46:54 Build Finished. 0 errors, 0 warnings. (took 649ms)
+12:27:26 Build Finished. 0 errors, 72 warnings. (took 2s.80ms)
 

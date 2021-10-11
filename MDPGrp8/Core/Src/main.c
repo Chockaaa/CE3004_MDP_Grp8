@@ -115,6 +115,7 @@ uint8_t value[5];
 uint8_t home[5];
 /* USER CODE END 0 */
 uint8_t stopwheel=0;
+uint8_t sensordist;
 /**
   * @brief  The application entry point.
   * @retval int
@@ -824,7 +825,7 @@ void StartDefaultTask(void *argument)
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 	uint8_t ch='A';
 	sprintf(value,"%s\0","00000");
-
+	int wk9task=0;
 
 	uint8_t temp[5];
   for(;;)
@@ -840,19 +841,12 @@ void StartDefaultTask(void *argument)
 	*/
 	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer,5);
 	OLED_ShowString(10,10,hello);
-	sprintf(temp,"%s\0",aRxBuffer);
-	if(temp=="54321")
-	{
-		OLED_ShowString(10,40,"Wk9 Task");
-	}
-	else
-	{
 	sprintf(value,"%s\0",aRxBuffer);
 	OLED_ShowString(10,40,value);
 	HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 	OLED_Refresh_Gram();
 	osDelay(500);
-	}
+
 
   }
   /* USER CODE END 5 */
@@ -893,7 +887,24 @@ void rightmotor(void *argument)
 		dist = (uint32_t)(x%1000); //Get last 2 Digit
 		x/=1000;
 		switch(x) {
-			case 10  :
+			case 30	:
+					htim1.Instance->CCR4=74;
+					HAL_GPIO_WritePin(GPIOB, DIN2_Pin, GPIO_PIN_SET);
+					HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
+					while(sensordist>30)
+					{
+						__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
+						osDelay(100);
+					}
+
+
+					__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
+
+					flag=1;
+					break;
+
+
+			case 10 :
 
 
 		    	/*htim1.Instance->CCR4=75;
@@ -1379,6 +1390,22 @@ void leftmotor(void *argument)
 			  dist = (uint32_t)(x%1000); //Get last 2 Digit
 			  x/=1000;
 			  switch(x) {
+				case 30	:
+
+			 	 	HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
+			  		HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
+
+						while(sensordist>30)
+						{
+					  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
+					  		osDelay(100);
+						}
+
+
+						__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
+
+
+						break;
 	  	  	  	  case 10 :
 /*	    		 	 	HAL_GPIO_WritePin(GPIOE, CIN1_Pin, GPIO_PIN_SET);
 	    		  		 HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
@@ -1756,14 +1783,14 @@ void sensor(void *argument)
 		uint16_t raw;
   for(;;)
   {
-		//HAL_ADC_Start(&hadc1);
-		//HAL_ADC_PollForConversion(&hadc1,300);
+		HAL_ADC_Start(&hadc1);
+		HAL_ADC_PollForConversion(&hadc1,HAL_MAX_DELAY);
 
-		//raw=HAL_ADC_GetValue(&hadc1);
-		//float vin=raw*(3.3/4096);
-		//sprintf(hello, "%5d\0", raw);
-		//osDelay(1000);
-		//OLED_ShowString(70,50,hello);
+		raw=HAL_ADC_GetValue(&hadc1);
+		sensordist=33000/raw;
+		sprintf(hello, "%5d\0", sensordist);
+		osDelay(50);
+		OLED_ShowString(70,50,hello);
 	  	  //if(HAL_GetTick()-tick>1000L){
 	  		  		/*cnt2=__HAL_TIM_GET_COUNTER(&htim5);
 	  		  		if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5)){
