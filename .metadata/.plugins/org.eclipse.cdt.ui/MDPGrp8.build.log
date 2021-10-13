@@ -1,10 +1,10 @@
-13:53:55 **** Incremental Build of configuration Release for project MDPGrp8 ****
+16:12:52 **** Incremental Build of configuration Release for project MDPGrp8 ****
 make -j12 all 
 arm-none-eabi-size   MDPGrp8.elf 
    text	   data	    bss	    dec	    hex	filename
-  27040	    124	   9732	  36896	   9020	MDPGrp8.elf
+  30000	    124	   9748	  39872	   9bc0	MDPGrp8.elf
 Finished building: default.size.stdout
  
 
-13:53:56 Build Finished. 0 errors, 0 warnings. (took 776ms)
+16:12:52 Build Finished. 0 errors, 0 warnings. (took 382ms)
 
