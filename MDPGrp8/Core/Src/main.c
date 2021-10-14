@@ -973,34 +973,80 @@ void rightmotor(void *argument)
 				temp=sensordist/10;
 				backdistance=temp;
 				temp=tickbaseval*(temp-5);
-				while(totaldist<temp)
+				if(backdistance>=8)
 				{
-					if(HAL_GetTick()-tick>25L)
+					while(totaldist<temp)
 					{
-						cnt2=__HAL_TIM_GET_COUNTER(&htim5);
-						if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5))
+//						if(sensordist<=37)
+//						{
+//							break;
+//						}
+						if(HAL_GetTick()-tick>25L)
 						{
-							if(cnt2<cnt1)
-								diff=cnt1-cnt2;
+							cnt2=__HAL_TIM_GET_COUNTER(&htim5);
+							if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5))
+							{
+								if(cnt2<cnt1)
+									diff=cnt1-cnt2;
+								else
+									diff=(65535-cnt2)+cnt1;
+							}
 							else
-								diff=(65535-cnt2)+cnt1;
-						}
-						else
-						{
-							if(cnt2>cnt1)
-								diff=cnt2-cnt1;
-							else
-								diff=(65535-cnt1)+cnt2;
+							{
+								if(cnt2>cnt1)
+									diff=cnt2-cnt1;
+								else
+									diff=(65535-cnt1)+cnt2;
+							}
+
+							sprintf(hello, "S:%5d\0", diff);
+							OLED_ShowString(50,30,hello);
+							dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5);
+							sprintf(hello, "RD:%2d\0", dir);
+							OLED_ShowString(10,30,hello);
+							cnt1=__HAL_TIM_GET_COUNTER(&htim5);
+							tick=HAL_GetTick();
+							totaldist+=diff;
 						}
 
-						sprintf(hello, "S:%5d\0", diff);
-						OLED_ShowString(50,30,hello);
-						dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5);
-						sprintf(hello, "RD:%2d\0", dir);
-						OLED_ShowString(10,30,hello);
-						cnt1=__HAL_TIM_GET_COUNTER(&htim5);
-						tick=HAL_GetTick();
-						totaldist+=diff;
+					}
+				}
+				else
+				{
+					while(totaldist<temp)
+					{
+						if(sensordist<=37)
+						{
+							break;
+						}
+						if(HAL_GetTick()-tick>25L)
+						{
+							cnt2=__HAL_TIM_GET_COUNTER(&htim5);
+							if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5))
+							{
+								if(cnt2<cnt1)
+									diff=cnt1-cnt2;
+								else
+									diff=(65535-cnt2)+cnt1;
+							}
+							else
+							{
+								if(cnt2>cnt1)
+									diff=cnt2-cnt1;
+								else
+									diff=(65535-cnt1)+cnt2;
+							}
+
+							sprintf(hello, "S:%5d\0", diff);
+							OLED_ShowString(50,30,hello);
+							dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5);
+							sprintf(hello, "RD:%2d\0", dir);
+							OLED_ShowString(10,30,hello);
+							cnt1=__HAL_TIM_GET_COUNTER(&htim5);
+							tick=HAL_GetTick();
+							totaldist+=diff;
+						}
+
 					}
 
 				}
@@ -1035,36 +1081,43 @@ void rightmotor(void *argument)
 				tick=HAL_GetTick();
 				temp=backdistance-2;
 				temp=tickbaseval*(temp-5);
-				while(totaldist<temp)
+				if(backdistance>=8)
 				{
-					if(HAL_GetTick()-tick>25L)
+					while(totaldist<temp)
 					{
-						cnt2=__HAL_TIM_GET_COUNTER(&htim5);
-						if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5))
+//						if(sensordist<=25)
+//						{
+//							break;
+//						}
+						if(HAL_GetTick()-tick>25L)
 						{
-							if(cnt2<cnt1)
-								diff=cnt1-cnt2;
+							cnt2=__HAL_TIM_GET_COUNTER(&htim5);
+							if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5))
+							{
+								if(cnt2<cnt1)
+									diff=cnt1-cnt2;
+								else
+									diff=(65535-cnt2)+cnt1;
+							}
 							else
-								diff=(65535-cnt2)+cnt1;
-						}
-						else
-						{
-							if(cnt2>cnt1)
-								diff=cnt2-cnt1;
-							else
-								diff=(65535-cnt1)+cnt2;
+							{
+								if(cnt2>cnt1)
+									diff=cnt2-cnt1;
+								else
+									diff=(65535-cnt1)+cnt2;
+							}
+
+							sprintf(hello, "S:%5d\0", diff);
+							OLED_ShowString(50,30,hello);
+							dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5);
+							sprintf(hello, "RD:%2d\0", dir);
+							OLED_ShowString(10,30,hello);
+							cnt1=__HAL_TIM_GET_COUNTER(&htim5);
+							tick=HAL_GetTick();
+							totaldist+=diff;
 						}
 
-						sprintf(hello, "S:%5d\0", diff);
-						OLED_ShowString(50,30,hello);
-						dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim5);
-						sprintf(hello, "RD:%2d\0", dir);
-						OLED_ShowString(10,30,hello);
-						cnt1=__HAL_TIM_GET_COUNTER(&htim5);
-						tick=HAL_GetTick();
-						totaldist+=diff;
 					}
-
 				}
 				__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, 0);
 
@@ -1158,7 +1211,7 @@ void rightmotor(void *argument)
 				HAL_GPIO_WritePin(GPIOB, DIN1_Pin, GPIO_PIN_RESET);
 				__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_4, pwmVal);
 				tick=HAL_GetTick();
-				temp=tickbaseval*dist;
+				temp=tickbaseval*dist*0.85;
 				while(totaldist<temp)
 				{
 					if(HAL_GetTick()-tick>25L)
@@ -1781,33 +1834,76 @@ void leftmotor(void *argument)
 									temp=sensordist/10;
 									backdistance=temp;
 									temp=tickbaseval*(temp-5);
-									while(totaldist<temp)
+									if(backdistance>=8)
 									{
-						  		  	  if(HAL_GetTick()-tick>25L){
-						  		  		  cnt4=__HAL_TIM_GET_COUNTER(&htim4);
-						  		  		  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4))
-						  		  		  {
-						  		  			  if(cnt4<cnt3)
-												diff=cnt3-cnt4;
-						  		  			  else
-												diff=(65535-cnt4)+cnt3;
-						  		  		  }
-						  		  		  else
-						  		  		  {
-												if(cnt4>cnt3)
-													diff=cnt4-cnt3;
-												else
-													diff=(65535-cnt3)+cnt4;
-						  		  		  }
-											sprintf(hello, "S:%5d\0", diff);
-											OLED_ShowString(50,20,hello);
-											dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4);
-											sprintf(hello, "LD:%2d\0", dir);
-											OLED_ShowString(10,20,hello);
-											cnt3=__HAL_TIM_GET_COUNTER(&htim4);
-											tick=HAL_GetTick();
-											totaldist+=diff;
-						  		  		}
+										while(totaldist<temp)
+										{
+//											if(sensordist<=37)
+//											{
+//												break;
+//											}
+										  if(HAL_GetTick()-tick>25L){
+											  cnt4=__HAL_TIM_GET_COUNTER(&htim4);
+											  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4))
+											  {
+												  if(cnt4<cnt3)
+													diff=cnt3-cnt4;
+												  else
+													diff=(65535-cnt4)+cnt3;
+											  }
+											  else
+											  {
+													if(cnt4>cnt3)
+														diff=cnt4-cnt3;
+													else
+														diff=(65535-cnt3)+cnt4;
+											  }
+												sprintf(hello, "S:%5d\0", diff);
+												OLED_ShowString(50,20,hello);
+												dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4);
+												sprintf(hello, "LD:%2d\0", dir);
+												OLED_ShowString(10,20,hello);
+												cnt3=__HAL_TIM_GET_COUNTER(&htim4);
+												tick=HAL_GetTick();
+												totaldist+=diff;
+											}
+										}
+									}
+									else
+									{
+										while(totaldist<temp)
+										{
+											if(sensordist<=37)
+											{
+												break;
+											}
+										  if(HAL_GetTick()-tick>25L){
+											  cnt4=__HAL_TIM_GET_COUNTER(&htim4);
+											  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4))
+											  {
+												  if(cnt4<cnt3)
+													diff=cnt3-cnt4;
+												  else
+													diff=(65535-cnt4)+cnt3;
+											  }
+											  else
+											  {
+													if(cnt4>cnt3)
+														diff=cnt4-cnt3;
+													else
+														diff=(65535-cnt3)+cnt4;
+											  }
+												sprintf(hello, "S:%5d\0", diff);
+												OLED_ShowString(50,20,hello);
+												dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4);
+												sprintf(hello, "LD:%2d\0", dir);
+												OLED_ShowString(10,20,hello);
+												cnt3=__HAL_TIM_GET_COUNTER(&htim4);
+												tick=HAL_GetTick();
+												totaldist+=diff;
+											}
+										}
+
 									}
 									__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
 
@@ -1836,32 +1932,39 @@ void leftmotor(void *argument)
 					tick=HAL_GetTick();
 					temp=backdistance-2;
 					temp=tickbaseval*(temp-5);
-					while(totaldist<temp)
+					if(backdistance>=8)
 					{
-					  if(HAL_GetTick()-tick>25L){
-						  cnt4=__HAL_TIM_GET_COUNTER(&htim4);
-						  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4))
-						  {
-							  if(cnt4<cnt3)
-								diff=cnt3-cnt4;
+						while(totaldist<temp)
+						{
+//							if(sensordist<=25)
+//							{
+//								break;
+//							}
+						  if(HAL_GetTick()-tick>25L){
+							  cnt4=__HAL_TIM_GET_COUNTER(&htim4);
+							  if(__HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4))
+							  {
+								  if(cnt4<cnt3)
+									diff=cnt3-cnt4;
+								  else
+									diff=(65535-cnt4)+cnt3;
+							  }
 							  else
-								diff=(65535-cnt4)+cnt3;
-						  }
-						  else
-						  {
-								if(cnt4>cnt3)
-									diff=cnt4-cnt3;
-								else
-									diff=(65535-cnt3)+cnt4;
-						  }
-							sprintf(hello, "S:%5d\0", diff);
-							OLED_ShowString(50,20,hello);
-							dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4);
-							sprintf(hello, "LD:%2d\0", dir);
-							OLED_ShowString(10,20,hello);
-							cnt3=__HAL_TIM_GET_COUNTER(&htim4);
-							tick=HAL_GetTick();
-							totaldist+=diff;
+							  {
+									if(cnt4>cnt3)
+										diff=cnt4-cnt3;
+									else
+										diff=(65535-cnt3)+cnt4;
+							  }
+								sprintf(hello, "S:%5d\0", diff);
+								OLED_ShowString(50,20,hello);
+								dir = __HAL_TIM_IS_TIM_COUNTING_DOWN(&htim4);
+								sprintf(hello, "LD:%2d\0", dir);
+								OLED_ShowString(10,20,hello);
+								cnt3=__HAL_TIM_GET_COUNTER(&htim4);
+								tick=HAL_GetTick();
+								totaldist+=diff;
+							}
 						}
 					}
 					__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, 0);
@@ -1940,7 +2043,7 @@ void leftmotor(void *argument)
 		  		HAL_GPIO_WritePin(CIN2_GPIO_Port, CIN2_Pin, GPIO_PIN_RESET);
 		  		__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_3, pwmVal);
 				tick=HAL_GetTick();
-				temp=tickbaseval*dist;
+				temp=tickbaseval*dist*0.85;
 				while(totaldist<temp)
 				{
 	  		  	  if(HAL_GetTick()-tick>25L){
@@ -2433,9 +2536,9 @@ void sensor(void *argument)
   for(;;)
   {
 
-		HAL_ADC_Start(&hadc1);
-		HAL_ADC_PollForConversion(&hadc1,HAL_MAX_DELAY);
-		raw=HAL_ADC_GetValue(&hadc1);
+		//HAL_ADC_Start(&hadc1);
+		//HAL_ADC_PollForConversion(&hadc1,HAL_MAX_DELAY);
+		//raw=HAL_ADC_GetValue(&hadc1);
 //		sensordist=33000/raw;
 		HCSR04_Read();
 		sensordist=Distance;
