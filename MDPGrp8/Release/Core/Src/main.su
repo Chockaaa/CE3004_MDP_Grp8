@@ -1,11 +1,11 @@
 main.c:892:6:StartDefaultTask	48	static
-main.c:1797:6:leftmotor	80	static
+main.c:1970:6:leftmotor	80	static
 main.c:935:6:rightmotor	80	static
 main.c:120:6:delay	0	static
 main.c:137:6:HAL_TIM_IC_CaptureCallback	16	static
 main.c:174:6:HCSR04_Read	8	static
-main.c:2513:6:sensor	40	static
+main.c:2841:6:sensor	40	static
 main.c:282:6:SystemClock_Config	96	static,ignoring_inline_asm
 main.c:186:5:main	120	static,ignoring_inline_asm
 main.c:877:6:HAL_UART_RxCpltCallback	0	static
-main.c:2604:6:Error_Handler	0	static,ignoring_inline_asm
+main.c:2932:6:Error_Handler	0	static,ignoring_inline_asm
